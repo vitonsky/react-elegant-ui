@@ -27,4 +27,4 @@ export const Popup = compose(
 
 Popup.defaultProps = { keepMounted: true };
 
-export type IPopupProps = ExtractProps<typeof PopupBase>;
+export type IPopupProps = ExtractProps<typeof PopupDesktop>;
