@@ -8,6 +8,7 @@ This site may use some hacks and bad examples of code, then it is not good examp
 
 ## Roadmap
 
+- [ ] Deploy in pages
 - [ ] Fix anchors. At this time its may repeat ids. Must use hierarchy like `header-subHeader-subHeader2` or short hash of it as prefix
 - [ ] Add pages with API for each component
 - [ ] Add examples with knobs (or without)
