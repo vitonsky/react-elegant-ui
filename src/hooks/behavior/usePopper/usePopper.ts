@@ -19,7 +19,7 @@ type OptionsObject<M = any> = Partial<OptionsGeneric<M>>;
 type InnerOptions = OptionsObject<Modifiers>;
 
 export type PopupHookProps<
-	M extends Partial<Modifier<any, any>>[] = Partial<Modifier<any, any>>[]
+	M extends Partial<Modifier<any, any>>[] = Partial<Modifier<any, any>>[],
 > = {
 	/**
 	 * Reference to object relative to which the popup will be positioned
@@ -107,7 +107,7 @@ export interface PopupHookResult extends PopperPublicState {
  * Use popperjs for positioning popup elements
  */
 export function usePopper<
-	M extends Partial<Modifier<any, any>>[] = Partial<Modifier<any, any>>[]
+	M extends Partial<Modifier<any, any>>[] = Partial<Modifier<any, any>>[],
 >(props: PopupHookProps<M>): PopupHookResult {
 	const {
 		createPopper: customPopperConstructor,
@@ -285,6 +285,7 @@ export function usePopper<
 	}, [popperOptions]);
 
 	// Update when content changes
+	// NOTE: maybe we should use `useEffect` instead isomorphic, and use `update` method instead `forceUpdate`
 	useLayoutEffect(() => {
 		if (popperRef.current !== null) {
 			popperRef.current.forceUpdate();

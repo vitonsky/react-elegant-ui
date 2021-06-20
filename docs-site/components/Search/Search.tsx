@@ -305,6 +305,13 @@ export const Search: FC<SearchProps> = ({ debounceDelay = 300 }) => {
 	const inputRef = useRef<HTMLDivElement>(null);
 	const { root } = useContext(AppContext);
 
+	// Update position after update content
+	const updatePopupRef = useRef<(() => void) | null>(null);
+	useEffect(() => {
+		const update = updatePopupRef.current;
+		if (update !== null) update();
+	}, [searchResultContent]);
+
 	return (
 		<>
 			<Textinput
@@ -331,6 +338,7 @@ export const Search: FC<SearchProps> = ({ debounceDelay = 300 }) => {
 				modifiers={[applyMaxHeight, applyMinWidth]}
 				direction={['bottom', 'bottom-end']}
 				className={style.SearchResultPopup}
+				UNSTABLE_updatePosition={updatePopupRef}
 			>
 				{searchResultContent}
 			</Popup>
