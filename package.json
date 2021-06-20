@@ -7,15 +7,19 @@
 		"typescript",
 		"BEM",
 		"design-tokens",
-		"ui",
+		"UI",
 		"interface",
 		"components",
 		"ui-kit",
-		"elegant-ui",
-		"modular-ui"
+		"elegant-ui"
 	],
 	"license": "Apache-2.0",
 	"author": "Vitonsky <https://github.com/vitonsky>",
+	"homepage": "https://github.com/vitonsky/react-elegant-ui",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vitonsky/react-elegant-ui"
+	},
 	"scripts": {
 		"build:tokens": "themekit build -c ./themekit.config.json",
 		"build:src": "gulp",
