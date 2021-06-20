@@ -1,0 +1,107 @@
+.MarkdownPage h1,
+.MarkdownPage h2,
+.MarkdownPage h3,
+.MarkdownPage h4,
+.MarkdownPage h5,
+.MarkdownPage h6 {
+	margin: 0;
+	margin-bottom: var(--typography-controls-indent-xl);
+	scroll-margin-top: 60px;
+}
+
+.MarkdownPage *:not(hr) + h1,
+.MarkdownPage *:not(hr) + h2,
+.MarkdownPage *:not(hr) + h3,
+.MarkdownPage *:not(hr) + h4,
+.MarkdownPage *:not(hr) + h5,
+.MarkdownPage *:not(hr) + h6 {
+	--header-indent: 2rem;
+	margin-top: var(--header-indent);
+	/* margin-top: var(--typography-controls-indent-3xl); */
+}
+
+.MarkdownPage *:not(hr) + h2 {
+	margin-top: calc(var(--header-indent) - 0.2rem * 1);
+}
+.MarkdownPage *:not(hr) + h3 {
+	margin-top: calc(var(--header-indent) - 0.2rem * 2);
+}
+.MarkdownPage *:not(hr) + h4 {
+	margin-top: calc(var(--header-indent) - 0.2rem * 3);
+}
+.MarkdownPage *:not(hr) + h5 {
+	margin-top: calc(var(--header-indent) - 0.2rem * 4);
+}
+
+.MarkdownPage p {
+	margin: var(--typography-controls-indent-l) 0;
+	line-height: 1.5rem;
+}
+
+.MarkdownPage *:not(pre) > code {
+	display: inline-block;
+	padding: var(--typography-controls-indent-s)
+		var(--typography-controls-indent-m);
+	vertical-align: middle;
+	line-height: 100%;
+}
+
+/* .MarkdownPage li code {
+	padding:
+		var(--typography-controls-indent-xs)
+		var(--typography-controls-indent-s);
+} */
+
+.MarkdownPage pre {
+	margin: var(--typography-controls-indent-l) 0;
+}
+
+.MarkdownPage pre pre {
+	margin: 0;
+}
+
+.MarkdownPage ul {
+	padding-inline-start: var(--typography-controls-indent-2xl);
+}
+
+.MarkdownPage li ul {
+	margin: var(--typography-controls-indent-s) 0;
+}
+
+.MarkdownPage li {
+	list-style: none;
+}
+
+.MarkdownPage li p {
+	padding-inline-start: var(--typography-controls-indent-2xl);
+}
+
+.MarkdownPage li:not(:last-child) {
+	margin-bottom: var(--typography-controls-indent-l);
+}
+
+.MarkdownPage li::before {
+	display: block;
+	content: '-';
+	margin-right: var(--typography-controls-indent-m);
+	font-weight: bold;
+	float: inline-start;
+}
+
+.Header {
+	position: relative;
+}
+
+.Header-Link {
+	position: absolute;
+	right: 100%;
+	padding-right: var(--typography-controls-indent-s);
+	opacity: 0;
+	scroll-margin-top: inherit;
+	transition: opacity 0.15s;
+}
+
+.Header-Link:focus,
+.Header:hover .Header-Link {
+	opacity: 1;
+}

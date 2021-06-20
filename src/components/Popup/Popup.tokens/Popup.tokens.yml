@@ -1,0 +1,13 @@
+popup:
+  border:
+    radius:
+      value: '{typography.controls.border.radius.value}'
+
+  viewDefault:
+    typoColor:
+      value: '{color.typo.primary.value}'
+    fillColor:
+      value: '{color.fillColor.default.value}'
+    borderColor:
+      shadow:
+        value: '{color.control.borderColor.shadow.value}'

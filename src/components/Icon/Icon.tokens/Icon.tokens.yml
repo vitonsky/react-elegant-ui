@@ -1,0 +1,12 @@
+icon:
+  size:
+    xs:
+      value: '{typography.controls.icon.size.xs.value}'
+    s:
+      value: '{typography.controls.icon.size.s.value}'
+    m:
+      value: '{typography.controls.icon.size.m.value}'
+    l:
+      value: '{typography.controls.icon.size.l.value}'
+    xl:
+      value: '{typography.controls.icon.size.xl.value}'

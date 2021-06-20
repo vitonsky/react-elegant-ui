@@ -1,0 +1,12 @@
+.Link_focusVisible:focus {
+	outline: 2px solid var(--color-control-border-color-prism);
+}
+
+.Link {
+	color: var(--color-link-base);
+}
+
+.Link:hover,
+.Link:focus {
+	color: var(--color-link-hover);
+}

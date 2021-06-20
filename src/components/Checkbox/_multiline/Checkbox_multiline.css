@@ -1,0 +1,4 @@
+.Checkbox_multiline .Checkbox-Label {
+	white-space: normal;
+	word-wrap: break-word;
+}

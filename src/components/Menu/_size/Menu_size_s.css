@@ -1,0 +1,33 @@
+.Menu_size_s .Menu-Container {
+	font-size: var(--menu-size-s-font-size);
+}
+
+/* edge gaps */
+.Menu_size_s .Menu-Container::before,
+.Menu_size_s .Menu-Container::after {
+	display: block;
+	content: '';
+	height: var(--menu-size-m-container-indent);
+}
+
+.Menu_size_s .Menu-Item {
+	padding: 0 var(--menu-size-m-item-indent);
+	line-height: var(--menu-size-m-item-line-height);
+}
+
+.Menu_size_s .Menu-Item_raw {
+	padding: 0;
+}
+
+.Menu_size_s .Menu-GroupTitle {
+	line-height: var(--menu-size-m-title-line-height);
+	padding: 0 var(--menu-size-m-title-indent);
+}
+
+.Menu_size_s .Menu-ItemContent:not(.Menu-ItemContent_raw) {
+	padding: 0 var(--menu-size-m-item-indent);
+}
+
+.Menu_size_s .Menu-ItemContent:not(.Menu-ItemContent_raw) > *:not(:last-child) {
+	margin-inline-end: var(--menu-indent-m);
+}

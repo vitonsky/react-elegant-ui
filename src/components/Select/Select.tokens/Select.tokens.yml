@@ -1,0 +1,8 @@
+select:
+  border:
+    radius:
+      value: '{typography.controls.border.radius.value}'
+
+  fillColor:
+    base:
+      value: '{color.control.type.default.fillColor.base.value}'

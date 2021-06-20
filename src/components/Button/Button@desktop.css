@@ -1,0 +1,3 @@
+.Button.Button_focusVisible:focus::before {
+	border-width: var(--button-outline-width);
+}

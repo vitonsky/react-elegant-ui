@@ -1,0 +1,6 @@
+.Textarea-Wrap {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-height: 100%;
+}

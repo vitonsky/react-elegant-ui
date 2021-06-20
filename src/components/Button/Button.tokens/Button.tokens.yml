@@ -1,0 +1,135 @@
+button:
+  transition:
+    hover:
+      value: '{transition.controls.action.hover.size.s.in.value}'
+    press:
+      value: '{transition.controls.action.press.size.s.value}'
+
+  fontFamily:
+    value: '{typography.controls.fontFamily.value}'
+
+  outlineWidth:
+    value: '{typography.controls.outlineWidth.value}'
+
+  border:
+    width:
+      value: '{typography.controls.border.width.s.value}'
+    radius:
+      value: '{typography.controls.border.radius.value}'
+
+  size:
+    s:
+      fontSize:
+        value: '{typography.controls.fontSize.s.value}'
+      lineHeight:
+        value: '{typography.controls.lineHeight.l.value}'
+
+      indent:
+        inner:
+          value: '{typography.controls.indent.s.value}'
+        outer:
+          value: '{typography.controls.indent.m.value}'
+        content:
+          value: '{typography.controls.indent.xs.value}'
+
+    m:
+      fontSize:
+        value: '{typography.controls.fontSize.m.value}'
+      lineHeight:
+        value: '{typography.controls.lineHeight.l.value}'
+
+      indent:
+        inner:
+          value: '{typography.controls.indent.m.value}'
+        outer:
+          value: '{typography.controls.indent.l.value}'
+        content:
+          value: '{typography.controls.indent.xs.value}'
+
+    l:
+      fontSize:
+        value: '{typography.controls.fontSize.l.value}'
+      lineHeight:
+        value: '{typography.controls.lineHeight.l.value}'
+
+      indent:
+        inner:
+          value: '{typography.controls.indent.m.value}'
+        outer:
+          value: '{typography.controls.indent.xl.value}'
+        content:
+          value: '{typography.controls.indent.xs.value}'
+
+  viewDefault:
+    outlineColor:
+      value: '{color.control.borderColor.prism.value}'
+
+    fillColor:
+      base:
+        value: '{color.control.type.default.fillColor.base.value}'
+      disabled:
+        value: '{color.control.type.default.fillColor.disabled.value}'
+      hovered:
+        value: '{color.control.type.default.fillColor.hover.value}'
+
+    typoColor:
+      base:
+        value: '{color.control.type.default.typo.base.value}'
+      disabled:
+        value: '{color.control.type.default.typo.disabled.value}'
+
+  viewAction:
+    outlineColor:
+      value: '{color.control.type.action.borderColor.prism.value}'
+
+    fillColor:
+      base:
+        value: '{color.control.type.action.fillColor.base.value}'
+      disabled:
+        value: '{color.control.type.action.fillColor.disabled.value}'
+      hovered:
+        value: '{color.control.type.action.fillColor.hover.value}'
+
+    typoColor:
+      base:
+        value: '{color.control.type.action.typo.base.value}'
+      disabled:
+        value: '{color.control.type.action.typo.disabled.value}'
+      hovered:
+        value: '{color.control.type.action.typo.hover.value}'
+
+  viewClear:
+    outlineColor:
+      value: '{color.control.borderColor.prism.value}'
+
+    fillColor:
+      disabled:
+        value: '{color.control.type.default.fillColor.disabled.value}'
+
+    typoColor:
+      base:
+        value: '{color.control.typo.primary.value}'
+      disabled:
+        value: '{color.control.typo.disabled.value}'
+
+  viewPseudo:
+    outlineColor:
+      value: '{color.control.borderColor.prism.value}'
+
+    borderColor:
+      base:
+        value: '{color.control.type.pseudo.borderColor.base.value}'
+
+    fillColor:
+      base:
+        value: '{color.control.type.pseudo.fillColor.base.value}'
+      disabled:
+        value: '{color.control.type.default.fillColor.disabled.value}'
+      hovered:
+        value: '{color.control.type.pseudo.fillColor.hover.value}'
+
+    typoColor:
+      base:
+        value: '{color.control.typo.primary.value}'
+      disabled:
+        value: '{color.control.typo.disabled.value}'

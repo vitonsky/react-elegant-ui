@@ -1,0 +1,9 @@
+{
+	"mappers": ["./src/**/*.mapper.yml"],
+	"sources": [
+		"./src/theme/tokens/dark-color.tokens.yml",
+		"./src/theme/tokens/typography.tokens.yml",
+		"./src/theme/tokens/transition.tokens.yml",
+		"./src/components/**/*.tokens.yml"
+	]
+}

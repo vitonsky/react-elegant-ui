@@ -1,0 +1,4 @@
+.Icon_size_s {
+	min-width: var(--icon-size-s);
+	min-height: var(--icon-size-s);
+}

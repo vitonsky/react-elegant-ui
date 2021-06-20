@@ -1,0 +1,74 @@
+checkbox:
+  transition:
+    hover:
+      value: '{transition.controls.action.hover.size.s.in.value}'
+    toggle:
+      value: '{transition.controls.action.toggle.size.s.value}'
+
+  outlineWidth:
+    value: '{typography.controls.outlineWidth.value}'
+
+  outlineColor:
+    value: '{color.control.borderColor.prism.value}'
+
+  border:
+    radius:
+      value: '{typography.controls.border.radius.value}'
+
+  box:
+    # Size must be multiple 2px to keep aspect ratio and prevent blur
+    # Better if you set static value in px
+    size:
+      s:
+        value: 'calc({typography.controls.fontSize.m.value})'
+      m:
+        value: 'calc({typography.controls.fontSize.l.value} - 1px)'
+
+    fillColor:
+      base:
+        value: '{color.control.type.default.fillColor.base.value}'
+      hover:
+        value: '{color.control.type.default.fillColor.hover.value}'
+      disabled:
+        value: '{color.control.type.default.fillColor.disabled.value}'
+
+    checked:
+      fillColor:
+        base:
+          value: '{color.control.type.action.fillColor.base.value}'
+        hover:
+          value: '{color.control.type.action.fillColor.hover.value}'
+        disabled:
+          value: '{color.control.type.action.fillColor.disabled.value}'
+
+      outlineColor:
+        value: '{color.control.type.action.borderColor.prism.value}'
+
+  icon:
+    # Indents around icon
+    padding:
+      m:
+        value: '{typography.controls.indent.s.value}'
+
+    fillColor:
+      base:
+        value: '{color.control.type.action.typo.base.value}'
+      disabled:
+        value: '{color.control.type.action.typo.disabled.value}'
+
+  label:
+    indent:
+      m:
+        value: '{typography.controls.indent.s.value}'
+
+    fontSize:
+      s:
+        value: 'calc({typography.controls.fontSize.s.value})'
+      m:
+        value: 'calc({typography.controls.fontSize.m.value})'
+
+    typo:
+      base:
+        value: '{color.control.type.default.typo.base.value}'
+      disabled:
+        value: '{color.control.type.default.typo.disabled.value}'

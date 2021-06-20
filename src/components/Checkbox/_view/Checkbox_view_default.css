@@ -1,0 +1,54 @@
+.Checkbox_view_default {
+	user-select: none;
+}
+
+/* Box */
+.Checkbox_view_default .Checkbox-Box {
+	background-color: var(--checkbox-box-fill-color-base);
+	color: var(--checkbox-icon-fill-color-base);
+	transition: background-color var(--checkbox-transition-hover);
+}
+
+.Checkbox_view_default.Checkbox_hovered .Checkbox-Box {
+	background-color: var(--checkbox-box-fill-color-hover);
+}
+
+.Checkbox_view_default.Checkbox_disabled .Checkbox-Box {
+	background-color: var(--checkbox-box-fill-color-disabled);
+	color: var(--checkbox-icon-fill-color-disabled);
+}
+
+.Checkbox_view_default.Checkbox_checked .Checkbox-Box {
+	background-color: var(--checkbox-box-checked-fill-color-base);
+}
+
+.Checkbox_view_default.Checkbox_checked.Checkbox_hovered .Checkbox-Box {
+	background-color: var(--checkbox-box-checked-fill-color-hover);
+}
+
+.Checkbox_view_default.Checkbox_checked.Checkbox_disabled .Checkbox-Box {
+	background-color: var(--checkbox-box-checked-fill-color-disabled);
+}
+
+/* pin icon to bottom */
+.Checkbox_view_default .Checkbox-Tick {
+	margin-top: 3%;
+}
+
+/* add transition */
+.Checkbox_view_default:not(.Checkbox_checked) .Checkbox-Tick {
+	margin-top: -30%;
+}
+
+.Checkbox_view_default.Checkbox_checked .Checkbox-Tick {
+	transition: margin-top ease-out var(--checkbox-transition-toggle);
+}
+
+/* Label */
+.Checkbox_view_default .Checkbox-Label {
+	color: var(--checkbox-label-typo-base);
+}
+
+.Checkbox_view_default.Checkbox_disabled .Checkbox-Label {
+	color: var(--checkbox-label-typo-disabled);
+}

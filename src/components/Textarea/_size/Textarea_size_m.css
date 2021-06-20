@@ -1,0 +1,29 @@
+.Textarea_size_m {
+	font-size: var(--textarea-size-m-font-size);
+}
+
+/* Hint */
+.Textarea_size_m .Textarea-Hint {
+	font-size: var(--textarea-size-m-hint-font-size);
+	margin-top: var(--textarea-size-m-hint-indent);
+}
+
+/* Clear */
+.Textarea_size_m .Textarea-Clear {
+	margin: var(--textarea-size-m-clear-indent);
+}
+
+/* Control */
+.Textarea_size_m .Textarea-Control {
+	padding: var(--textarea-size-m-control-indent);
+	font-size: var(--textarea-size-m-font-size);
+	line-height: var(--textarea-size-m-line-height);
+}
+
+.Textarea_size_m.Textarea_hasClear .Textarea-Control {
+	padding-right: calc(
+		15% + var(--textarea-size-m-clear-indent) +
+			var(--textarea-size-m-clear-size)
+	);
+	width: 115%;
+}

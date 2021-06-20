@@ -1,0 +1,7 @@
+.Select_listboxSize_max .Select-List {
+	min-width: max-content;
+}
+
+.Select_listboxSize_max .Select-List .Menu-Container {
+	min-width: inherit;
+}

@@ -1,0 +1,36 @@
+{
+	"name": "docs-site",
+	"version": "1.0.0",
+	"description": "Docs site for UI kit",
+	"scripts": {
+		"dev": "NODE_OPTIONS='--inspect' next dev",
+		"build:searchIndex": "ts-node ./scripts/buildSearchIndex.ts",
+		"build": "npm run clear && npm run build:searchIndex && next build && next export",
+		"clear": "rm -rf .next out public/static"
+	},
+	"dependencies": {
+		"@bem-react/classname": "^1.5.9",
+		"@bem-react/di": "^2.2.6",
+		"@popperjs/core": "^2.9.2",
+		"@react-aria/interactions": "^3.3.4",
+		"@react-aria/utils": "^3.7.0",
+		"@types/resize-observer-browser": "^0.1.5",
+		"lunr": "^2.3.9",
+		"next": "^10.2.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-elegant-ui": "^0.1.33",
+		"react-syntax-highlighter": "^15.4.3"
+	},
+	"devDependencies": {
+		"@types/lunr": "^2.3.3",
+		"@types/react-syntax-highlighter": "^13.5.0",
+		"@types/unist": "^2.0.3",
+		"glob-promise": "^4.1.0",
+		"gray-matter": "^4.0.3",
+		"markdown-to-jsx": "^7.1.2",
+		"mdast-util-to-markdown": "^0.6.5",
+		"ts-node": "^9.1.1",
+		"unist-util-visit": "^3.1.0"
+	}
+}

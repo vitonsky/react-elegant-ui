@@ -1,0 +1,54 @@
+.TabsMenu_view_default .TabsMenu-Container {
+	list-style-type: none;
+}
+
+.TabsMenu_view_default .TabsMenu-Tab {
+	position: relative;
+	outline: none;
+	color: var(--tabsmenu-view-default-typo-color-base);
+	border-radius: var(--tabsmenu-view-default-border-radius);
+	overflow: hidden;
+	z-index: 0;
+	transition: color var(--tabsmenu-transition-hover);
+}
+
+.TabsMenu_view_default .TabsMenu-Tab.TabsMenu-Tab_disabled {
+	color: var(--tabsmenu-view-default-typo-color-disabled);
+}
+
+.TabsMenu_view_default .TabsMenu-Tab::before {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	content: '';
+	background-color: var(--tabsmenu-view-default-fill-color-base);
+	transition: background-color var(--tabsmenu-transition-hover), border-color var(--tabsmenu-transition-hover);
+}
+
+.TabsMenu_view_default.TabsMenu_layout_horizontal .TabsMenu-Tab::before {
+	border-bottom:
+		var(--tabsmenu-view-default-border-width) solid
+		var(--tabsmenu-view-default-border-color-base);
+}
+
+.TabsMenu_view_default.TabsMenu_layout_vertical .TabsMenu-Tab::before {
+	border-left:
+		var(--tabsmenu-view-default-border-width) solid
+		var(--tabsmenu-view-default-border-color-base);
+}
+
+.TabsMenu_view_default .TabsMenu-Tab:hover::before {
+	background-color: var(--tabsmenu-view-default-fill-color-hover);
+}
+
+.TabsMenu_view_default .TabsMenu-Tab.TabsMenu-Tab_disabled::before {
+	background-color: var(--tabsmenu-view-default-fill-color-disabled);
+	border-color: transparent;
+}
+
+.TabsMenu_view_default.TabsMenu_view_default .TabsMenu-Tab_active::before {
+	border-color: var(--tabsmenu-view-default-border-color-active);
+}

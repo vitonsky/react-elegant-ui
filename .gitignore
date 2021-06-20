@@ -1,0 +1,10 @@
+node_modules
+dist
+
+# dev files
+.npmrc
+package-lock.json
+
+# editors
+.vscode
+debug.log

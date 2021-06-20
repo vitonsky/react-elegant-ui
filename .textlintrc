@@ -1,0 +1,19 @@
+{
+	"filters": {
+		"comments": true
+	},
+	"rules": {
+		// it work very bad. I can't disable check URLs and check only local links,
+		// sometime it run infinity time, and it don't work with spaces in path, at least on windows
+		// but i hope in future of this tool
+		"no-dead-link": {
+			"checkRelative": true,
+			"baseURI": null,
+			"ignore": ["https://*/*"],
+			"preferGET": [],
+			"ignoreRedirects": false,
+			"retry": 3,
+			"userAgent": "textlint-rule-no-dead-link/1.0"
+		}
+	}
+}

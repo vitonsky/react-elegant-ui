@@ -1,0 +1,42 @@
+# Inspired by material design guidelines: https://material.io/design/motion/speed.html
+
+transition:
+  controls:
+    action:
+      toggle:
+        size:
+          s:
+            value: 100ms
+          m:
+            value: 250ms
+
+      press:
+        size:
+          s:
+            value: 100ms
+
+      hover:
+        size:
+          s:
+            in:
+              value: 150ms
+            out:
+              value: 100ms
+          m:
+            in:
+              value: 250ms
+            out:
+              value: 200ms
+          l:
+            in:
+              value: 300ms
+            out:
+              value: 250ms
+
+      spin:
+        size:
+          m:
+            duration:
+              value: 700ms
+            delay:
+              value: 200ms

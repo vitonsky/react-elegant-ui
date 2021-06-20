@@ -1,0 +1,81 @@
+.Textinput_view_default {
+	z-index: 0;
+}
+
+/* Wrap */
+.Textinput_view_default .Textinput-Wrap {
+	padding: var(--textinput-border-width);
+}
+
+/* Box */
+.Textinput_view_default .Textinput-Box {
+	border-width: var(--textinput-border-width);
+	border-style: solid;
+	border-color: var(--textinput-view-default-border-color-base);
+	border-radius: var(--textinput-border-radius);
+	background-color: var(--textinput-view-default-fill-color-base);
+	z-index: 1;
+	transition: border-color var(--textinput-transition-hover) linear;
+}
+
+.Textinput_view_default .Textinput-Wrap:hover .Textinput-Box {
+	border-color: var(--textinput-view-default-border-color-hover);
+}
+
+.Textinput_view_default .Textinput-Control:focus ~ .Textinput-Box {
+	border-color: var(--textinput-view-default-border-color-focus);
+}
+
+/* increase a specificity to overwrite pseudo classes */
+.Textinput_view_default.Textinput_disabled.Textinput_disabled .Textinput-Box {
+	background-color: var(--textinput-view-default-fill-color-disabled);
+	border-color: var(--textinput-view-default-border-color-disabled);
+}
+
+/* Control */
+.Textinput_view_default .Textinput-Control {
+	color: var(--textinput-view-default-typo-color-base);
+	z-index: 2;
+}
+
+.Textinput_view_default.Textinput_disabled .Textinput-Control {
+	color: var(--textinput-view-default-typo-color-disabled);
+}
+
+/* Icon */
+.Textinput_view_default .Textinput-Icon {
+	z-index: 2;
+}
+
+/* Clear */
+.Textinput_view_default .Textinput-Clear {
+	opacity: 0.7;
+	z-index: 3;
+	transition: opacity var(--textinput-transition-hover) linear;
+}
+
+.Textinput_view_default .Textinput-Clear:hover {
+	opacity: 1;
+}
+
+/* Hint */
+.Textinput_view_default .Textinput-Hint {
+	color: var(--textinput-view-default-typo-color-base);
+}
+
+.Textinput_view_default.Textinput_state_error .Textinput-Hint {
+	color: var(--textinput-view-default-typo-color-error);
+}
+
+/* state error styles */
+.Textinput_view_default.Textinput_state_error .Textinput-Control ~ .Textinput-Box {
+	border-color: var(--textinput-view-default-border-color-error-base);
+}
+
+.Textinput_view_default.Textinput_state_error .Textinput-Wrap:hover .Textinput-Box {
+	border-color: var(--textinput-view-default-border-color-error-hover);
+}
+
+.Textinput_view_default.Textinput_state_error .Textinput-Control:focus ~ .Textinput-Box {
+	border-color: var(--textinput-view-default-border-color-error-focus);
+}

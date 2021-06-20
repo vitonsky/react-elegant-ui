@@ -1,0 +1,84 @@
+tabsmenu:
+  transition:
+    hover:
+      value: '{transition.controls.action.hover.size.s.in.value}'
+    toggle:
+      value: '{transition.controls.action.toggle.size.s.value}'
+    motion:
+      value: '{transition.controls.action.toggle.size.m.value}'
+
+  fontFamily:
+    value: '{typography.controls.fontFamily.value}'
+
+  outlineWidth:
+    value: '{typography.controls.outlineWidth.value}'
+
+  indent:
+    inner:
+      m:
+        value: '{typography.controls.indent.m.value}'
+
+    gap:
+      s:
+        value: '{typography.controls.indent.s.value}'
+      m:
+        value: '{typography.controls.indent.m.value}'
+
+  size:
+    s:
+      fontSize:
+        value: '{typography.controls.fontSize.s.value}'
+      lineHeight:
+        value: '{typography.controls.lineHeight.l.value}'
+
+    m:
+      fontSize:
+        value: '{typography.controls.fontSize.m.value}'
+      lineHeight:
+        value: '{typography.controls.lineHeight.l.value}'
+
+  viewDefault:
+    outlineColor:
+      value: '{color.control.borderColor.prism.value}'
+
+    border:
+      width:
+        value: '{typography.controls.border.width.m.value}'
+      radius:
+        value: '{typography.controls.border.radius.value}'
+      color:
+        base:
+          value: '{color.control.type.pseudo.borderColor.base.value}'
+        active:
+          value: '{color.control.type.action.fillColor.hover.value}'
+
+    fillColor:
+      base:
+        value: '{color.control.type.pseudo.fillColor.base.value}'
+      hover:
+        value: '{color.control.type.pseudo.fillColor.hover.value}'
+      disabled:
+        value: '{color.control.type.default.fillColor.disabled.value}'
+
+    typoColor:
+      base:
+        value: '{color.control.typo.primary.value}'
+      disabled:
+        value: '{color.control.typo.disabled.value}'
+
+  viewPrimitive:
+    outlineColor:
+      value: '{color.control.borderColor.prism.value}'
+
+    border:
+      width:
+        value: '{typography.controls.border.width.m.value}'
+      color:
+        base:
+          value: '{color.typo.primary.value}'
+
+    typoColor:
+      base:
+        value: '{color.typo.primary.value}'
+      disabled:
+        value: '{color.control.typo.disabled.value}'

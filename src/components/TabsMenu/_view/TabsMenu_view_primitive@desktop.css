@@ -1,0 +1,5 @@
+.TabsMenu_focusVisible.TabsMenu_view_primitive .TabsMenu-Tab:focus {
+	outline:
+		var(--tabsmenu-outline-width) solid
+		var(--tabsmenu-view-primitive-outline-color);
+}

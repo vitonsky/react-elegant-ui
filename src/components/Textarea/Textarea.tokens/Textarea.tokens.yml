@@ -1,0 +1,85 @@
+textarea:
+  transition:
+    hover:
+      value: '{transition.controls.action.hover.size.s.in.value}'
+
+  border:
+    width:
+      value: '{typography.controls.border.width.m.value}'
+    radius:
+      value: '{typography.controls.border.radius.value}'
+
+  fontFamily:
+    value: '{typography.controls.fontFamily.value}'
+
+  size:
+    s:
+      fontSize:
+        value: '{typography.controls.fontSize.s.value}'
+      lineHeight:
+        value: '{typography.controls.lineHeight.s.value}'
+
+      control:
+        indent:
+          value: '{typography.controls.indent.m.value}'
+
+      hint:
+        fontSize:
+          value: '{typography.controls.fontSize.s.value}'
+        indent:
+          value: '{typography.controls.indent.s.value}'
+
+    m:
+      fontSize:
+        value: '{typography.controls.fontSize.m.value}'
+      lineHeight:
+        value: '{typography.controls.lineHeight.s.value}'
+
+      control:
+        indent:
+          value: '{typography.controls.indent.m.value}'
+
+      clear:
+        indent:
+          value: '{typography.controls.indent.xs.value}'
+        size:
+          value: '{typography.controls.icon.size.m.value}'
+
+      hint:
+        fontSize:
+          value: '{typography.controls.fontSize.s.value}'
+        indent:
+          value: '{typography.controls.indent.s.value}'
+
+  viewDefault:
+    fillColor:
+      base:
+        value: '{color.control.type.input.fillColor.base.value}'
+      disabled:
+        value: '{color.control.type.input.fillColor.disabled.value}'
+
+    borderColor:
+      base:
+        value: '{color.control.type.input.borderColor.base.value}'
+      hover:
+        value: '{color.control.type.input.borderColor.hover.value}'
+      disabled:
+        value: '{color.control.type.input.borderColor.disabled.value}'
+      focus:
+        value: '{color.control.type.input.borderColor.focus.value}'
+
+      error:
+        base:
+          value: '{color.control.borderColor.alert.base.value}'
+        hover:
+          value: '{color.control.borderColor.alert.hover.value}'
+        focus:
+          value: '{color.control.borderColor.alert.focus.value}'
+
+    typoColor:
+      base:
+        value: '{color.control.typo.primary.value}'
+      disabled:
+        value: '{color.control.typo.disabled.value}'
+      error:
+        value: '{color.control.typo.alert.value}'

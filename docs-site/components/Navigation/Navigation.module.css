@@ -1,0 +1,27 @@
+.Navigation,
+.Navigation-Container {
+	margin: 0;
+	padding: 0;
+	padding-left: var(--typography-controls-indent-s);
+	margin-bottom: var(--typography-controls-indent-l);
+	list-style: none;
+}
+
+.Navigation-Item {
+	border-left: 2px solid transparent;
+	padding:
+		var(--typography-controls-indent-m)
+		var(--typography-controls-indent-l);
+	list-style: none;
+	margin-bottom: var(--typography-controls-indent-s);
+}
+
+.Navigation-Item_active {
+	border-left-color: var(--color-control-type-action-fill-color-base);
+	background-color: var(--color-fill-color-ghost);
+}
+
+.Navigation-Title {
+	margin: 0;
+	margin: var(--typography-controls-indent-m) 0;
+}

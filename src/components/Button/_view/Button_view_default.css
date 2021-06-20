@@ -1,0 +1,26 @@
+.Button_view_default {
+	color: var(--button-view-default-typo-color-base);
+}
+
+.Button_view_default::before {
+	background-color: var(--button-view-default-fill-color-base);
+}
+
+.Button_view_default:hover::before {
+	background-color: var(--button-view-default-fill-color-hovered);
+	transition: background-color var(--button-transition-hover) linear;
+}
+
+/* Focus */
+.Button_focusVisible.Button_view_default:focus::before {
+	border-color: var(--button-view-default-outline-color);
+}
+
+/* Disabled */
+.Button_disabled.Button_view_default {
+	color: var(--button-view-default-typo-color-disabled);
+}
+
+.Button_disabled.Button_view_default::before {
+	background-color: var(--button-view-default-fill-color-disabled);
+}

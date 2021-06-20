@@ -1,0 +1,26 @@
+.Button {
+	display: inline-block;
+	position: relative;
+	box-sizing: border-box;
+	border: 0;
+	border-radius: var(--button-border-radius);
+	cursor: default;
+	text-decoration: none;
+	font-family: var(--button-font-family);
+	outline: none;
+	background: transparent;
+	padding: 0;
+}
+
+.Button::before {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	outline: none;
+	overflow: hidden;
+	border: var(--button-outline-width) solid transparent;
+	border-radius: var(--button-border-radius);
+}

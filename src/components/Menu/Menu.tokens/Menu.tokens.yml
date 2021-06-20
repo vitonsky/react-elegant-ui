@@ -1,0 +1,106 @@
+menu:
+  fontFamily:
+    value: '{typography.controls.fontFamily.value}'
+
+  border:
+    radius:
+      value: '{typography.controls.border.radius.value}'
+
+  indent:
+    m:
+      value: '{typography.controls.indent.m.value}'
+
+  size:
+    s:
+      fontSize:
+        value: '{typography.controls.fontSize.s.value}'
+
+    m:
+      fontSize:
+        value: '{typography.controls.fontSize.m.value}'
+
+      container:
+        indent:
+          value: '{typography.controls.indent.s.value}'
+
+      item:
+        lineHeight:
+          value: '{typography.controls.lineHeight.xl.value}'
+        indent:
+          value: '{typography.controls.indent.xl.value}'
+
+      title:
+        lineHeight:
+          value: '{typography.controls.lineHeight.l.value}'
+        indent:
+          value: '{typography.controls.indent.xl.value}'
+
+    l:
+      fontSize:
+        value: '{typography.controls.fontSize.l.value}'
+
+  viewDefault:
+    fillColor:
+      base:
+        value: '{color.control.type.default.fillColor.base.value}'
+      disabled:
+        value: '{color.control.type.default.fillColor.disabled.value}'
+
+    group:
+      border:
+        width:
+          value: '{typography.controls.border.width.s.value}'
+        color:
+          base:
+            value: '{color.control.type.default.borderColor.base.value}'
+
+    title:
+      typoColor:
+        base:
+          value: '{color.control.typo.secondary.value}'
+
+    item:
+      typoColor:
+        base:
+          value: '{color.control.type.default.typo.base.value}'
+        hover:
+          value: '{color.control.type.default.typo.base.value}'
+        disabled:
+          value: '{color.control.type.default.typo.disabled.value}'
+
+      fillColor:
+        hover:
+          value: '{color.control.type.default.fillColor.hover.value}'
+
+  viewAction:
+    fillColor:
+      base:
+        value: '{color.control.type.default.fillColor.base.value}'
+      disabled:
+        value: '{color.control.type.default.fillColor.disabled.value}'
+
+    group:
+      border:
+        width:
+          value: '{typography.controls.border.width.s.value}'
+        color:
+          base:
+            value: '{color.control.type.default.borderColor.base.value}'
+
+    title:
+      typoColor:
+        base:
+          value: '{color.control.typo.secondary.value}'
+
+    item:
+      typoColor:
+        base:
+          value: '{color.control.type.default.typo.base.value}'
+        hover:
+          value: '{color.control.type.action.typo.base.value}'
+        disabled:
+          value: '{color.control.type.default.typo.disabled.value}'
+
+      fillColor:
+        hover:
+          value: '{color.control.type.action.fillColor.hover.value}'

@@ -1,0 +1,32 @@
+{
+	"entry": {
+		"default": "./src/theme/themes/default.theme.json",
+		"wine": "./src/theme/themes/wine.theme.json",
+		"dark": "./src/theme/themes/dark.theme.json"
+	},
+	"output": {
+		"css": {
+			"buildPath": "./src/theme/presets",
+			"transforms": ["name/cti/kebab", "name/mapper"],
+			"actions": ["process-color"],
+			"files": [
+				{
+					"destination": "[entry]/color.css",
+					"format": "css/variables",
+					"filter": "whitepaper/color",
+					"options": {
+						"selector": ".Theme_color_[entry]"
+					}
+				},
+				{
+					"destination": "[entry]/root.css",
+					"format": "css/variables",
+					"filter": "whitepaper/root",
+					"options": {
+						"selector": ".Theme_root_[entry]"
+					}
+				}
+			]
+		}
+	}
+}

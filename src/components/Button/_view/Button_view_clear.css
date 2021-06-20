@@ -1,0 +1,26 @@
+.Button_view_clear {
+	color: var(--button-view-clear-typo-color-base);
+}
+
+/* Focus */
+.Button_focusVisible.Button_view_clear:focus::before {
+	border-color: var(--button-view-clear-outline-color);
+}
+
+/* Disabled */
+.Button_view_clear:not(.Button_disabled) .Button-Content {
+	opacity: 0.65;
+	transition: opacity var(--button-transition-hover) linear;
+}
+
+.Button_view_clear:not(.Button_disabled):hover .Button-Content {
+	opacity: 1;
+}
+
+.Button_disabled.Button_view_clear {
+	color: var(--button-view-clear-typo-color-disabled);
+}
+
+.Button_disabled.Button_view_clear::before {
+	background-color: var(--button-view-clear-fill-color-disabled);
+}

@@ -1,0 +1,30 @@
+spinner:
+  size:
+    s:
+      value: '{typography.controls.icon.size.s.value}'
+    m:
+      value: '{typography.controls.icon.size.m.value}'
+    l:
+      value: '{typography.controls.icon.size.l.value}'
+
+  animation:
+    duration:
+      value: '{transition.controls.action.spin.size.m.duration.value}'
+    delay:
+      value: '{transition.controls.action.spin.size.m.delay.value}'
+
+  view:
+    primitive:
+      border:
+        width:
+          value: '{typography.controls.border.width.l.value}'
+
+        color:
+          active:
+            value: '{color.control.type.action.fillColor.base.value}'
+          common:
+            value: 'transparent'
+
+    icon:
+      fillColor:
+        value: 'currentColor'

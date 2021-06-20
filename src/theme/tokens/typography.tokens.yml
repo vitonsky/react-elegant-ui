@@ -1,0 +1,63 @@
+typography:
+  controls:
+    fontFamily:
+      value: 'Arial, Helvetica, sans-serif'
+
+    outlineWidth:
+      value: '{typography.controls.border.width.m.value}'
+
+    fontSize:
+      s:
+        value: .9rem
+      m:
+        value: 1rem
+      l:
+        value: 1.2rem
+
+    lineHeight:
+      s:
+        value: 120%
+      m:
+        value: 150%
+      l:
+        value: 200%
+      xl:
+        value: 250%
+
+    indent:
+      xs:
+        value: .1rem
+      s:
+        value: .2rem
+      m:
+        value: .4rem
+        comment: 'Base indent size'
+      l:
+        value: .6rem
+      xl:
+        value: .8rem
+
+    border:
+      radius:
+        value: 4px
+      width:
+        s:
+          value: 1px
+        m:
+          value: 2px
+        l:
+          value: 3px
+
+    # icon sizes should be multiple 2px to prevent blur
+    icon:
+      size:
+        xs:
+          value: 18px
+        s:
+          value: 20px
+        m:
+          value: 24px
+        l:
+          value: 28px
+        xl:
+          value: 32px

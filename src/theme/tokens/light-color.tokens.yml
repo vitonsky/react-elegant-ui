@@ -1,0 +1,243 @@
+color:
+  base:
+    value: '#000'
+    comment: 'base content color on which depend color of text, icons, etc'
+  essential:
+    value: '#fff'
+    comment: 'background color'
+  project:
+    value: '#0366d6'
+    comment: 'project color for accents such as a action view'
+  phantom:
+    value: '#000'
+    comment: 'toning color on which depend borders, translucent typography, etc'
+  path:
+    value: '#04b'
+    comment: 'base color for link'
+  success:
+    value: '#00985f'
+  alert:
+    value: '#f33'
+    comment: 'error color affecting to background and typography'
+  warning:
+    value: '#f90'
+
+  fillColor:
+    inverse:
+      value: '{color.base.value}'
+    action:
+      value: 'color({color.project.value} l(+15%))'
+    selection:
+      value: 'color({color.project.value} l(+31%) h(-1))'
+    hover:
+      value: 'color({color.base.value} a(15%) })'
+    border:
+      value: 'color({color.phantom.value} a(5%) })'
+    outline:
+      value: '#D518DA'
+    stripe:
+      value: 'color({color.phantom.value} a(4%) })'
+    ghost:
+      value: 'color({color.phantom.value} a(8%) })'
+    default:
+      value: '{color.essential.value}'
+    tone:
+      value: 'color({color.phantom.value} a(90%) })'
+    soft:
+      value: 'color({color.essential.value} a(97%) })'
+    success:
+      value: '{color.success.value}'
+    alert:
+      value: '{color.alert.value}'
+    warning:
+      value: '{color.warning.value}'
+    link:
+      value: 'color({color.path.value} h(-7%) s(-13) l(+14) a(40%))'
+
+  typo:
+    primary:
+      value: '{color.base.value}'
+      comment: 'color of the main text of default controls'
+    inverse:
+      value: '{color.essential.value}'
+      comment: 'contrast to primary color'
+    secondary:
+      value: 'color({color.base.value} a(60%))'
+      comment: 'color of the secondary text'
+    ghost:
+      value: 'color({color.base.value} a(30%))'
+      comment: 'color of the additional text'
+    disabled:
+      value: 'color({color.base.value} a(30%))'
+      comment: 'color of the main text of disabled control'
+    success:
+      value: '{color.success.value}'
+    warning:
+      value: '{color.warning.value}'
+    alert:
+      value: 'color({color.alert.value} l(-16%))'
+
+  link:
+    base:
+      value: '{color.path.value}'
+    external:
+      value: '{color.path.value}'
+    minor:
+      value: 'color({color.path.value} h(+22) s(-80%) l(+13%))'
+    hover:
+      value: '#c00'
+
+  control:
+    borderColor:
+      focus:
+        value: 'color({color.phantom.value} l(70%))'
+      prism:
+        value: '{color.fillColor.outline.value}'
+        comment: 'border color for special focus such as keyboard focus'
+      shadow:
+        value: 'color({color.phantom.value} l(60%) a(10%))'
+      alert:
+        base:
+          value: 'color({color.alert.value} l(-16%))'
+        hover:
+          value: 'color({color.alert.value} l(-6%))'
+        focus:
+          value: 'color({color.alert.value} l(+6%))'
+
+    typo:
+      primary:
+        value: '{color.base.value}'
+      secondary:
+        value: 'color({color.base.value} a(60%))'
+      ghost:
+        value: 'color({color.base.value} a(30%))'
+      passive:
+        value: '{color.base.value}'
+      faint:
+        value: 'color({color.base.value} l(100%))'
+      disabled:
+        value: 'color({color.phantom.value} l(50%))'
+      link:
+        value: '{color.path.value}'
+      alert:
+        value: 'color({color.alert.value} l(-16%))'
+
+    type:
+      default:
+        fillColor:
+          base:
+            value: 'color({color.essential.value} l(90%))'
+          hover:
+            value: 'color({color.essential.value} l(85%))'
+          disabled:
+            value: 'color({color.essential.value} l(95%))'
+
+        borderColor:
+          base:
+            value: 'color({color.phantom.value} l(70%))'
+          hover:
+            value: 'color({color.phantom.value} l(85%))'
+          disabled:
+            value: 'color({color.phantom.value} l(91%))'
+
+        typo:
+          base:
+            value: '{color.typo.primary.value}'
+          disabled:
+            value: '{color.control.typo.disabled.value}'
+
+      action:
+        fillColor:
+          base:
+            value: '{color.project.value}'
+          hover:
+            value: 'color({color.project.value} l(+8%))'
+          disabled:
+            value: 'color({color.project.value} l(85%))'
+
+        borderColor:
+          prism:
+            value: '{color.fillColor.outline.value}'
+
+        typo:
+          base:
+            value: '{color.typo.inverse.value}'
+          hover:
+            value: '{color.typo.inverse.value}'
+          disabled:
+            value: '{color.typo.inverse.value}'
+
+      input:
+        fillColor:
+          base:
+            value: '{color.essential.value}'
+          disabled:
+            value: 'color({color.essential.value} l(95%))'
+
+        borderColor:
+          base:
+            value: 'color({color.phantom.value} l(85%))'
+          hover:
+            value: 'color({color.phantom.value} l(80%))'
+          focus:
+            value: '{color.control.borderColor.focus.value}'
+          disabled:
+            value: 'color({color.essential.value} l(95%))'
+
+        typo:
+          base:
+            value: '{color.typo.primary.value}'
+          disabled:
+            value: '{color.control.typo.disabled.value}'
+
+      pseudo:
+        fillColor:
+          base:
+            value: 'color({color.phantom.value} l(100%))'
+          hover:
+            value: 'color({color.phantom.value} l(97%))'
+        borderColor:
+          base:
+            value: 'color({color.phantom.value} l(80%))'
+
+      passive:
+        fillColor:
+          base:
+            value: '{color.essential.value}'
+
+      blank:
+        fillColor:
+          base:
+            value: '{color.essential.value}'
+          hover:
+            value: '{color.essential.value}'
+          disabled:
+            value: 'color({color.essential.value} l(95%))'
+
+        borderColor:
+          base:
+            value: 'color({color.phantom.value} l(85%))'
+          hover:
+            value: 'color({color.phantom.value} l(80%))'
+          disabled:
+            value: 'color({color.essential.value} l(95%))'
+
+      faint:
+        fillColor:
+          base:
+            value: '{color.essential.value}'
+          disabled:
+            value: 'color({color.essential.value} l(78%))'
+
+      link:
+        fillColor:
+          base:
+            value: '{color.path.value}'
+          hover:
+            value: 'color({color.path.value} a(30%))'
+
+        borderColor:
+          base:
+            value: 'color({color.path.value} a(60%))'
+          hover:
+            value: 'color({color.path.value} a(60%))'
