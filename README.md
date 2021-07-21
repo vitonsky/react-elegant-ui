@@ -12,12 +12,12 @@ Library focused on reuse, flexibility and performance, give you components and p
 
 ## Getting started
 
-<!-- TODO: add link to docs site -->
+Read [the docs](https://vitonsky.github.io/react-elegant-ui/docs/Introduction/GettingStarted/) to get basic usage examples.
 
-- To start use components, read [components docs](./docs/Introduction/GettingStarted.md) which explain how to use components and build components from features
-- To start development your own components from scratch or make features, read [component development docs](./docs/Component%20development/Introduction.md) to get known about library tools and style guide
+- To start use components, read [components docs](https://vitonsky.github.io/react-elegant-ui/docs/Introduction/GettingStarted/) which explain how to use components and build components from features
+- To start development your own components from scratch or make features, read [component development docs](https://vitonsky.github.io/react-elegant-ui/docs/Component%20development/Introduction/) to get known about library tools and style guide
 
-Please, if you don't understand something, create issue to improve documentation and make it clear.
+Please, if you don't understand something, [create issue](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fvitonsky%2Freact-elegant-ui%2Fissues%2Fnew) to improve documentation and make it clear.
 
 If you can't find something in docs, try search it in source code, most likely it explain there in comments. Consider that docs will never contain all details of all features implementations, cuz world changes too fast. Aim of docs is explain concepts and details of interfaces, show examples, but not of implementations.
 
