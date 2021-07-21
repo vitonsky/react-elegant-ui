@@ -32,10 +32,13 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Install deps
+      - name: Install root deps
+        run: npm install
+
+      - name: Install docs-site deps
         working-directory: './docs-site'
         run: npm install
 
-      - name: Deploy
+      - name: Deploy docs-site
         working-directory: './docs-site'
         run: npm run deploy
