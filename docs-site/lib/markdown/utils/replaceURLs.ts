@@ -10,10 +10,10 @@ export const replaceURLs = (
 	const tree = remark().parse(raw);
 
 	// Walk all URLs
-	walker(tree, (node): any => {
+	walker(tree, (node: any): any => {
 		if (node.type === 'link' || node.type === 'image') {
 			// Handle URL
-			if (typeof node.url === 'string') {
+			if ('url' in node && typeof node.url === 'string') {
 				node.url = handler(node.url, node.type);
 				return [WalkerCodes.CONTINUE, node];
 			}
@@ -30,18 +30,15 @@ export const replaceURLsAsync = async (
 	const tree = remark().parse(raw);
 
 	// Walk all URLs
-	await walkerAsync(
-		tree,
-		async (node): Promise<any> => {
-			if (node.type === 'link' || node.type === 'image') {
-				// Handle URL
-				if (typeof node.url === 'string') {
-					node.url = await handler(node.url, node.type);
-					return [WalkerCodes.CONTINUE, node];
-				}
+	await walkerAsync(tree, async (node: any): Promise<any> => {
+		if (node.type === 'link' || node.type === 'image') {
+			// Handle URL
+			if (typeof node.url === 'string') {
+				node.url = await handler(node.url, node.type);
+				return [WalkerCodes.CONTINUE, node];
 			}
-		},
-	);
+		}
+	});
 
 	return toMarkdown(tree);
 };

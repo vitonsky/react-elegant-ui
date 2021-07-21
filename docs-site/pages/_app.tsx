@@ -49,6 +49,7 @@ const cnApp = cn('App');
 const themesMap = { light: defaultTheme, dark: darkTheme };
 
 const { publicRuntimeConfig } = getConfig();
+const basePath = publicRuntimeConfig.basePath ?? '';
 
 const headerLinks: { title: string; url: string }[] = [
 	{
@@ -116,7 +117,7 @@ const Application: NextPage<AppProps<{ nav: number }>, DocsPage> = (props) => {
 				<link
 					rel="shortcut icon"
 					type="image/jpg"
-					href="/logo-simple.svg"
+					href={basePath + "/logo-simple.svg"}
 				/>
 			</Header>
 			<AppContext.Provider value={contextValue}>
@@ -133,7 +134,7 @@ const Application: NextPage<AppProps<{ nav: number }>, DocsPage> = (props) => {
 									cnApp('HeaderLink'),
 								)}
 							>
-								<img src="/logo-simple.svg" />
+								<img src={basePath + "/logo-simple.svg"} />
 							</BaseLink>
 
 							<div className={cnApp('LinkBar')}>

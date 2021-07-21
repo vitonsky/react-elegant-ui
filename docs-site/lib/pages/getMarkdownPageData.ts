@@ -15,7 +15,7 @@ export const getMarkdownPageData = (raw: string) => {
 		if (node.type === 'heading') {
 			let status = 0;
 			node = walker(node, (node): any => {
-				if (node.type !== 'text') return;
+				if (node.type !== 'text' || !('value' in node)) return;
 
 				const value = node.value;
 				if (typeof value === 'string' && value.length > 0) {

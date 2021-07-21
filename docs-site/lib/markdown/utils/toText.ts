@@ -1,7 +1,6 @@
-import { Node } from 'unist';
-import { walker, WalkerCodes } from '../lib/walker';
+import { AnyUnistNode, walker, WalkerCodes } from '../lib/walker';
 
-export const toText = (tree: Node, ignoredTokens: string[] = []) => {
+export const toText = (tree: AnyUnistNode, ignoredTokens: string[] = []) => {
 	let text = '';
 
 	walker(tree, (node): any => {
@@ -11,7 +10,9 @@ export const toText = (tree: Node, ignoredTokens: string[] = []) => {
 		}
 
 		if (node.type === 'text') {
-			text += node.value;
+			if ('value' in node) {
+				text += node.value;
+			}
 		} else if (node.type === 'heading') {
 			// Remove headers
 			text += '\n\n';

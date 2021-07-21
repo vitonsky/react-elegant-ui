@@ -1,4 +1,6 @@
-import { Node } from 'unist';
+import { Node, Parent, Literal } from 'unist';
+
+export type AnyUnistNode = Node | Parent | Literal;
 
 export const WalkerCodes = {
 	CONTINUE: 0,
@@ -6,20 +8,20 @@ export const WalkerCodes = {
 };
 
 // Simply implementation of https://github.com/syntax-tree/unist-util-visit-parents/blob/main/index.js
-type WalkerHandlerFn = (node: Node) => void | WalkerHandlerResult;
+type WalkerHandlerFn = (node: AnyUnistNode) => void | WalkerHandlerResult;
 type WalkerHandlerFnPromise = (
-	node: Node,
+	node: AnyUnistNode,
 ) => Promise<void | WalkerHandlerResult>;
 type WalkerHandlerResult = [number, Node | null];
 
 export function* walkGenerator(
-	tree: Node,
+	tree: AnyUnistNode,
 ): Generator<Node, WalkerHandlerResult, void | WalkerHandlerResult> {
 	// export const walkerHelper = (tree: Node, handler: WalkerHandler) => {
 	let localSignal = 0;
 	const localTree = { ...tree };
 
-	if (localTree.children) {
+	if ('children' in localTree) {
 		const childs = localTree.children as Node[];
 		const localChilds: Node[] = [];
 
@@ -62,8 +64,8 @@ export function* walkGenerator(
 	return [localSignal, localTree] as WalkerHandlerResult;
 }
 
-export function walker(tree: Node, handler: WalkerHandlerFn): Node {
-	if (tree.children) {
+export function walker(tree: AnyUnistNode, handler: WalkerHandlerFn): Node {
+	if ('children' in tree) {
 		const gen = walkGenerator(tree);
 		let iter = gen.next();
 
@@ -79,10 +81,10 @@ export function walker(tree: Node, handler: WalkerHandlerFn): Node {
 }
 
 export async function walkerAsync(
-	tree: Node,
+	tree: AnyUnistNode,
 	handler: WalkerHandlerFnPromise,
 ): Promise<Node> {
-	if (tree.children) {
+	if ('children' in tree) {
 		const gen = walkGenerator(tree);
 		let iter = gen.next();
 

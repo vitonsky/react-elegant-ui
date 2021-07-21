@@ -5,8 +5,8 @@
 	"scripts": {
 		"dev": "NODE_OPTIONS='--inspect' next dev",
 		"build:searchIndex": "ts-node ./scripts/buildSearchIndex.ts",
-		"build": "npm run clear && npm run build:searchIndex && next build && next export",
-		"deploy": "npm run build && npx gh-pages -d out",
+		"build": "NODE_ENV=production npm run clear && npm run build:searchIndex && next build && next export",
+		"deploy": "npm run build && echo '_next' > out/.nojekyll && npx gh-pages -t true -d out",
 		"clear": "rm -rf .next out public/static"
 	},
 	"dependencies": {
@@ -32,7 +32,8 @@
 		"gray-matter": "^4.0.3",
 		"markdown-to-jsx": "^7.1.2",
 		"mdast-util-to-markdown": "^0.6.5",
-		"ts-node": "^9.1.1",
+		"remark": "^13.0.0",
+		"ts-node": "^10.1.0",
 		"unist-util-visit": "^3.1.0"
 	}
 }

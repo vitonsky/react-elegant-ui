@@ -8,6 +8,7 @@ import {
 	useState,
 } from 'react';
 import lunr from 'lunr';
+import getConfig from 'next/config';
 
 import { useDelayCallback } from 'react-elegant-ui/hooks/useDelayCallback';
 import { applyMaxHeight } from 'react-elegant-ui/hooks/behavior/usePopper/modifiers/applyMaxHeight';
@@ -24,7 +25,9 @@ import { AppContext } from '../../pages/_app';
 import { HighlightPosition, getHighlightedSegments } from './utils';
 import style from './Search.module.css';
 
-const searchIndexPath = '/static/searchData/index.json';
+const { publicRuntimeConfig } = getConfig();
+const basePath = publicRuntimeConfig.basePath ?? '';
+const searchIndexPath = basePath + '/static/searchData/index.json';
 
 type SearchResult = {
 	url: string;
@@ -82,7 +85,7 @@ export const Search: FC<SearchProps> = ({ debounceDelay = 300 }) => {
 		const foundItems: SearchResult[] = await Promise.all(
 			searchResult.map(({ ref, matchData }) =>
 				// Fetch page data
-				fetch(encodeURI(ref))
+				fetch(basePath + encodeURI(ref))
 					.then((rsp) => rsp.json())
 					// Collect segments with matched words
 					.then(({ title, text, url }) => {

@@ -67,6 +67,7 @@ export const getStaticProps: GetStaticProps<DocPage> = async (context) => {
 	const { title, text, date } = await getPageData(page.absolutePath, {
 		root: cfg.root,
 	});
+
 	return {
 		props: {
 			title,

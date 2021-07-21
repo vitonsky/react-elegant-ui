@@ -44,17 +44,24 @@ function patchClientStyles(config) {
 	});
 }
 
+// Use `basePath` for github pages
+const isProd = process.env.NODE_ENV === 'production';
+const basePath = isProd ? '/react-elegant-ui' : '';
+
 module.exports = {
 	poweredByHeader: false,
 	trailingSlash: true,
 	future: {
 		webpack5: true,
 	},
+	basePath,
 	publicRuntimeConfig: {
 		title: 'Elegant UI',
-		// repo: '#',
+		repo: 'https://github.com/vitonsky/react-elegant-ui',
 		staticFolder: '/static',
+		basePath,
 	},
+
 	webpack: (config, options) => {
 		const { isServer, webpack } = options;
 

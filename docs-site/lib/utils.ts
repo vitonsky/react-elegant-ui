@@ -1,6 +1,6 @@
 import path from 'path';
 
-import { promises, BaseEncodingOptions, Mode, OpenMode } from 'fs';
+import { promises, ObjectEncodingOptions, Mode, OpenMode } from 'fs';
 const { mkdir, writeFile } = promises;
 
 /**
@@ -29,7 +29,7 @@ export const writeFileForce = async (
 	filePath: string,
 	data: string | Uint8Array,
 	options?:
-		| (BaseEncodingOptions & { mode?: Mode; flag?: OpenMode })
+		| (ObjectEncodingOptions & { mode?: Mode; flag?: OpenMode })
 		| BufferEncoding
 		| null,
 ): Promise<void> => {
