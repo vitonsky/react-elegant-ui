@@ -26,8 +26,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GHTOKEN }}
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
@@ -41,7 +39,12 @@ jobs:
 
       - name: Deploy docs-site
         working-directory: './docs-site'
+        env:
+          GH_TOKEN: ${{ secrets.GHTOKEN }}
         run: |
-          git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git config --local user.email "action@github.com"
+          git config --local credential.username vitonsky
+          git config --local credential.helper "!f() { test \"$1\" = get && echo \"password=$GH_TOKEN\"; }; f"
+          
           npm run deploy
