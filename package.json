@@ -40,7 +40,7 @@
 		"@bem-react/classname": "^1.5.8",
 		"@bem-react/di": "^2.2.5",
 		"@commitlint/cli": "^12.1.4",
-		"@commitlint/config-conventional": "^12.1.4",
+		"@commitlint/config-conventional": "^13.1.0",
 		"@popperjs/core": "^2.9.0",
 		"@react-aria/interactions": "^3.3.4",
 		"@react-aria/utils": "^3.7.0",
