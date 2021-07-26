@@ -59,7 +59,7 @@
 		"gulp-babel": "^8.0.0",
 		"gulp-cli": "^2.3.0",
 		"gulp-typescript": "^6.0.0-alpha.1",
-		"husky": "^6.0.0",
+		"husky": "^7.0.1",
 		"lint-staged": "^11.0.0",
 		"merge-stream": "^2.0.0",
 		"plugin-error": "^1.0.1",
