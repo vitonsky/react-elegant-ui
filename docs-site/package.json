@@ -5,7 +5,6 @@
 	"scripts": {
 		"dev": "NODE_OPTIONS='--inspect' next dev",
 		"build:searchIndex": "ts-node ./scripts/buildSearchIndex.ts",
-		"build:examples": "initPWD=$(pwd) && cd ../examples/components-list && npm i && npm run build && ls -al ./ && mkdir \"$initPWD\"/out/demo && cp -r ./{dist,index.html} \"$initPWD\"/out/demo && cd \"$initPWD\"",
 		"build": "NODE_ENV=production npm run clear && npm run build:searchIndex && next build && next export",
 		"deploy": "npm run build && echo '_next' > out/.nojekyll && npx gh-pages -t true -d out",
 		"clear": "rm -rf .next out public/static"
