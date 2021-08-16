@@ -1,0 +1,9 @@
+.Popup {
+	position: absolute;
+}
+
+.Popup[data-popper-reference-hidden],
+.Popup[data-popper-escaped] {
+	visibility: hidden !important;
+	pointer-events: none !important;
+}

@@ -1,0 +1,11 @@
+.Checkbox .Checkbox-Box {
+	position: relative;
+	display: inline-block;
+	border-radius: var(--checkbox-border-radius);
+}
+
+/* vertical alignment */
+.Checkbox-Box::after {
+	content: '\00A0';
+	visibility: hidden;
+}

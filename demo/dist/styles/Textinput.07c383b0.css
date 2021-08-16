@@ -1,0 +1,5 @@
+.Textinput {
+	position: relative;
+	display: inline-block;
+	font-family: var(--textinput-font-family);
+}

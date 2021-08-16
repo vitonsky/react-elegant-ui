@@ -1,0 +1,4 @@
+.Spinner_size_l {
+	width: var(--spinner-size-l);
+	height: var(--spinner-size-l);
+}

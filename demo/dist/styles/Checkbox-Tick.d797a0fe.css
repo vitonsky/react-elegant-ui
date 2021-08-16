@@ -1,0 +1,19 @@
+.Checkbox .Checkbox-Tick {
+	position: absolute;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+}
+
+.Checkbox:not(.Checkbox_checked) .Checkbox-Tick {
+	visibility: hidden;
+}
+
+.Checkbox-Icon {
+	width: 100%;
+	height: 100%;
+}

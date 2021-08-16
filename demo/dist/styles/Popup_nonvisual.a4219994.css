@@ -1,0 +1,15 @@
+/* Increase specificity for IE11 */
+.Popup.Popup_nonvisual[class] {
+	border: 0;
+	background: none;
+	box-shadow: none;
+}
+
+.Popup.Popup_nonvisual[class]::before {
+	content: none;
+	box-shadow: none;
+}
+
+.Popup.Popup_nonvisual .Popup-Tail {
+	visibility: hidden;
+}

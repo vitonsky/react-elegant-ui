@@ -1,0 +1,34 @@
+.Menu_view_default {
+	background-color: var(--menu-view-default-fill-color-base);
+}
+
+.Menu_disabled.Menu_view_default {
+	background-color: var(--menu-view-default-fill-color-disabled);
+}
+
+.Menu_view_default :not(.Menu-Item_hidden):not(.Menu-Group_hidden) ~ .Menu-Group {
+	border-top:
+		var(--menu-view-default-group-border-width) solid
+		var(--menu-view-default-group-border-color-base);
+}
+
+.Menu_view_default .Menu-Item {
+	cursor: default;
+	color: var(--menu-view-default-item-typo-color-base);
+	background-color: transparent;
+}
+
+.Menu_view_default .Menu-Item_cursor,
+.Menu_view_default .Menu-Item_selected {
+	color: var(--menu-view-default-item-typo-color-hover);
+	background-color: var(--menu-view-default-item-fill-color-hover);
+}
+
+.Menu_view_default .Menu-Item_disabled {
+	color: var(--menu-view-default-item-typo-color-disabled);
+	background-color: transparent;
+}
+
+.Menu_view_default .Menu-GroupTitle {
+	color: var(--menu-view-default-title-typo-color-base);
+}

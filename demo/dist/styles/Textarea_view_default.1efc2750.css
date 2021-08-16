@@ -1,0 +1,76 @@
+.Textarea_view_default {
+	z-index: 0;
+}
+
+/* Wrap */
+.Textarea_view_default .Textarea-Wrap {
+	padding: var(--textarea-border-width);
+}
+
+/* Box */
+.Textarea_view_default .Textarea-Box {
+	border: var(--textarea-border-width) solid
+		var(--textarea-view-default-border-color-base);
+	border-radius: var(--textarea-border-radius);
+	background-color: var(--textarea-view-default-fill-color-base);
+	z-index: 1;
+	transition: border-color var(--textarea-transition-hover) linear;
+}
+
+.Textarea_view_default .Textarea-Wrap:hover .Textarea-Box {
+	border-color: var(--textarea-view-default-border-color-hover);
+}
+
+.Textarea_view_default .Textarea-Control:focus ~ .Textarea-Box {
+	border-color: var(--textarea-view-default-border-color-focus);
+}
+
+/* increased specificity to overwrite pseudo classes */
+.Textarea_view_default.Textarea_disabled.Textarea_disabled .Textarea-Box {
+	background-color: var(--textarea-view-default-fill-color-disabled);
+	border-color: var(--textarea-view-default-border-color-disabled);
+}
+
+/* Control */
+.Textarea_view_default .Textarea-Control {
+	color: var(--textarea-view-default-typo-color-base);
+	border-radius: var(--textarea-border-radius);
+	z-index: 2;
+}
+
+.Textarea_view_default.Textarea_disabled .Textarea-Control {
+	color: var(--textarea-view-default-typo-color-disabled);
+}
+
+/* Clear */
+.Textarea_view_default .Textarea-Clear {
+	top: var(--textarea-border-width);
+	right: var(--textarea-border-width);
+	z-index: 3;
+	opacity: 0.7;
+	transition: opacity var(--textarea-transition-hover) linear;
+}
+
+.Textarea_view_default .Textarea-Clear:hover {
+	opacity: 1;
+}
+
+/* Hint */
+.Textarea_view_default.Textarea_state_error .Textarea-Hint {
+	color: var(--textarea-view-default-typo-color-error);
+}
+
+/* error state */
+.Textarea_view_default.Textarea_state_error .Textarea-Control ~ .Textarea-Box {
+	border-color: var(--textarea-view-default-border-color-error-base);
+}
+
+.Textarea_view_default.Textarea_state_error .Textarea-Wrap:hover .Textarea-Box {
+	border-color: var(--textarea-view-default-border-color-error-hover);
+}
+
+.Textarea_view_default.Textarea_state_error
+	.Textarea-Control:focus
+	~ .Textarea-Box {
+	border-color: var(--textarea-view-default-border-color-error-focus);
+}

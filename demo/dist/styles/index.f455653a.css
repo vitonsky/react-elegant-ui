@@ -1,0 +1,39 @@
+body {
+	margin: 0;
+	font-family: var(--typography-controls-font-family);
+	border-color: var(--color-fill-color-border);
+}
+
+h1,
+h2,
+h3 {
+	margin:
+		var(--typography-controls-indent-xl) 0
+		var(--typography-controls-indent-m);
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child {
+	margin-top: 0;
+}
+
+a {
+	color: var(--color-link-base);
+}
+
+.DemoPage {
+	background-color: var(--color-fill-color-default);
+}
+
+.DemoPage-Header {
+	padding: 1rem;
+	line-height: var(--typography-controls-line-height-l);
+	border-bottom: 1px solid var(--color-fill-color-border);
+}
+
+.DemoPage-Main {
+	padding: 1rem;
+	background-color: var(--color-fill-color-default);
+	color: var(--color-typo-primary);
+}

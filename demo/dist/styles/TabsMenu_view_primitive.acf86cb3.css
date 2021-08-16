@@ -1,0 +1,38 @@
+.TabsMenu_view_primitive .TabsMenu-Container {
+	list-style-type: none;
+}
+
+.TabsMenu_view_primitive .TabsMenu-Tab {
+	position: relative;
+	outline: none;
+	color: var(--tabsmenu-view-primitive-typo-color-base);
+}
+
+.TabsMenu_view_primitive .TabsMenu-Tab.TabsMenu-Tab_disabled {
+	color: var(--tabsmenu-view-primitive-typo-color-disabled);
+}
+
+.TabsMenu_view_primitive .TabsMenu-Tab::before {
+	position: absolute;
+	content: '';
+	background-color: transparent;
+	transition: background-color var(--tabsmenu-transition-toggle);
+}
+
+.TabsMenu_view_primitive.TabsMenu_layout_vertical .TabsMenu-Tab::before {
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: var(--tabsmenu-view-primitive-border-width);
+}
+
+.TabsMenu_view_primitive.TabsMenu_layout_horizontal .TabsMenu-Tab::before {
+	top: 0;
+	left: 0;
+	right: 0;
+	height: var(--tabsmenu-view-primitive-border-width);
+}
+
+.TabsMenu_view_primitive .TabsMenu-Tab_active::before {
+	background-color: var(--tabsmenu-view-primitive-border-color-base);
+}

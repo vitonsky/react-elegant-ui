@@ -1,0 +1,21 @@
+.Button_size_l {
+	font-size: var(--button-size-l-font-size);
+	line-height: var(--button-size-l-line-height);
+}
+
+/* Content gaps */
+.Button_size_l .Button-Content:not(.Button-Content_raw) > * {
+	margin-inline-start: var(--button-size-l-indent-outer);
+}
+
+.Button_size_l .Button-Content:not(.Button-Content_raw) > * + * {
+	margin-inline-start: var(--button-size-l-indent-inner);
+}
+
+.Button_size_l .Button-Content:not(.Button-Content_raw) > *:last-child {
+	margin-inline-end: var(--button-size-l-indent-outer);
+}
+
+.Button_size_l .Button-Text {
+	padding: 0 var(--button-size-l-indent-content);
+}

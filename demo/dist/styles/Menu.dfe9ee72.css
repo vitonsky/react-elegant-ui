@@ -1,0 +1,5 @@
+.Menu {
+	box-sizing: border-box;
+	font-family: var(--menu-font-family);
+	border-radius: var(--menu-border-radius);
+}

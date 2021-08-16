@@ -1,0 +1,11 @@
+.Textinput-Control {
+	display: block;
+	box-sizing: border-box;
+	box-shadow: none;
+	width: 100%;
+	background-color: unset;
+	outline: none;
+	margin: none;
+	border: none;
+	font-family: var(--textinput-font-family);
+}

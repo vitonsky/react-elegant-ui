@@ -1,0 +1,16 @@
+.TabsMenu_size_s {
+	font-size: var(--tabsmenu-size-s-font-size);
+}
+
+.TabsMenu_size_s .TabsMenu-Tab {
+	padding: 0 var(--tabsmenu-indent-inner-m);
+	line-height: var(--tabsmenu-size-s-line-height);
+}
+
+.TabsMenu_size_s.TabsMenu_layout_horizontal .TabsMenu-Tab:not(:last-child) {
+	margin-inline-end: var(--tabsmenu-indent-gap-s);
+}
+
+.TabsMenu_size_s.TabsMenu_layout_vertical .TabsMenu-Tab:not(:last-child) {
+	margin-block-end: var(--tabsmenu-indent-gap-s);
+}

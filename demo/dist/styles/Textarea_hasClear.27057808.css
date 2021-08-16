@@ -1,0 +1,4 @@
+/* It need to hide control scroll */
+.Textarea_hasClear .Textarea-Wrap {
+	overflow: hidden;
+}
