@@ -56,10 +56,10 @@ const headerLinks: { title: string; url: string }[] = [
 		url: '/docs',
 		title: 'Docs',
 	},
-	// {
-	// 	url: '#',
-	// 	title: 'Examples'
-	// },
+	{
+		url: '/demo',
+		title: 'Demo',
+	},
 
 	...(publicRuntimeConfig.repo
 		? [
@@ -117,7 +117,7 @@ const Application: NextPage<AppProps<{ nav: number }>, DocsPage> = (props) => {
 				<link
 					rel="shortcut icon"
 					type="image/jpg"
-					href={basePath + "/logo-simple.svg"}
+					href={basePath + '/logo-simple.svg'}
 				/>
 			</Header>
 			<AppContext.Provider value={contextValue}>
@@ -134,7 +134,7 @@ const Application: NextPage<AppProps<{ nav: number }>, DocsPage> = (props) => {
 									cnApp('HeaderLink'),
 								)}
 							>
-								<img src={basePath + "/logo-simple.svg"} />
+								<img src={basePath + '/logo-simple.svg'} />
 							</BaseLink>
 
 							<div className={cnApp('LinkBar')}>

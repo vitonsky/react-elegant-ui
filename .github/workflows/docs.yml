@@ -39,6 +39,13 @@ jobs:
         working-directory: './docs-site'
         run: npm run build
 
+      - name: Build examples
+        run: |
+          cd examples/components-list
+          npm i
+          npm run build
+          outDir=../../docs-site/out/demo && mkdir -p "$outDir" && cp -r ./{dist,index.html} "$outDir"
+
       - name: Deploy to GitHub Pages
         uses: Cecilapp/GitHub-Pages-deploy@v3
         env:
