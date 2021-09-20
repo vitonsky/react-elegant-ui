@@ -41,3 +41,18 @@ export type DeepReadonly<T> = {
  * Type-safe getting property from else's object by key
  */
 export type GetProperty<T, P> = P extends keyof T ? T[P] : never;
+
+/**
+ * Make intersection type from union type
+ *
+ * For more info see: https://fettblog.eu/typescript-union-to-intersection/
+ *
+ * @example
+ * // return `{foo: 1} & {bar: 2}`
+ * type intersection = UnionToIntersection<{foo: 1} | {bar: 2}>;
+ */
+export type UnionToIntersection<U> = (
+	U extends any ? (k: U) => void : never
+) extends (k: infer I) => void
+	? I
+	: never;

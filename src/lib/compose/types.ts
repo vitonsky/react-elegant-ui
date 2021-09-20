@@ -50,7 +50,7 @@ export interface HOCOptions<S extends {}> {
  */
 export type ConfigurableHOC<
 	HOCProps extends {},
-	OriginProps extends {} = {}
+	OriginProps extends {} = {},
 > = {
 	<P extends {} = {}>(Component: ComponentType<P & HOCProps>): ComponentType<
 		P & HOCProps & OriginProps
@@ -64,7 +64,7 @@ export type HOC<T> = (WrappedComponent: ComponentType) => ComponentType<T>;
  * Simply HOC for compose. It can be use instead `ConfigurableHOC`
  */
 export type SimplyHOC<Props extends {}, Origin extends {} = {}> = <
-	P extends {} = {}
+	P extends {} = {},
 >(
 	Component: ComponentType<P & Props>,
 ) => ComponentType<P & Props & Origin>;
@@ -100,3 +100,16 @@ export type ExtractProps<T> = T extends ComponentType<infer K>
 export type Composition<T> = <U extends ComponentType<any>>(
 	fn: U,
 ) => FC<JSX.LibraryManagedAttributes<U, ExtractProps<U>> & T>;
+
+/**
+ * Useful to infer type from `CompositeUnitSimple`
+ *
+ * It may use with union types to apply for each naked type in union
+ */
+export type InferStructFromCompositeUnit<T> = T extends CompositeUnitSimple<
+	infer X
+>
+	? X extends {}
+		? X
+		: never
+	: T;
