@@ -1,0 +1,9 @@
+/* TODO: move it to tokens */
+.Modal_view_default .Modal-Content {
+	margin: 5px;
+	background-color: #fff;
+}
+
+.Modal_view_default .Modal-Overlay {
+	background-color: rgba(0, 0, 0, 0.3);
+}
