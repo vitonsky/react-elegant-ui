@@ -4,7 +4,12 @@ import { Modal as ModalDesktop } from '../Modal';
 
 import { withModModalViewDefault } from '../_view/Modal_view_default';
 
-export const Modal = compose(composeU(withModModalViewDefault))(ModalDesktop);
+import { withModModalRenderAll } from '../_renderAll/Modal_renderAll';
+
+export const Modal = compose(
+	composeU(withModModalViewDefault),
+	withModModalRenderAll,
+)(ModalDesktop);
 
 Modal.defaultProps = { view: 'default' };
 

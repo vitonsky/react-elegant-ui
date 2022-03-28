@@ -50,7 +50,6 @@ export interface IModalProps extends IComponentHTMLElement<HTMLDivElement> {
 	zIndex?: number;
 }
 
-// TODO: implement option `renderAll` as modifier, which render to DOM on SSR and render to portal on client
 // TODO: implement wrapper and modifier `renderToWindowsStack` which use context to render in stack wrapper
 
 // TODO: add vanishing animation to desktop view
