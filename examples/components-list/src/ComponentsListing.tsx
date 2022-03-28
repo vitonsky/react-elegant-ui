@@ -66,6 +66,7 @@ import {
 import {
 	BasicExample as ModalBasicExample,
 	ComplexExample as ModalComplexExample,
+	RenderToScope as ModalRenderToScope,
 } from '../../../src/components/Modal/__examples__/common.example';
 
 import {
@@ -180,6 +181,9 @@ export const ComponentsListing: FC = () => (
 
 		<h2>Complex example</h2>
 		<ModalComplexExample />
+
+		<h2>Render to scope</h2>
+		<ModalRenderToScope />
 
 		<h1>
 			<a id="menu" href="#menu">

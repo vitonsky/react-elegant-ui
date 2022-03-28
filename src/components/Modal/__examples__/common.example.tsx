@@ -49,6 +49,7 @@ export const ComplexExample: FC = () => {
 				view="default"
 				zIndex={1}
 				onClose={() => setIsVisible(false)}
+				keepMounted
 			>
 				<div style={{ padding: '1rem' }}>
 					Lorem ipsum dolor sit amet.
@@ -64,6 +65,30 @@ export const ComplexExample: FC = () => {
 						Close window
 					</Button>
 				</div>
+			</Modal>
+		</div>
+	);
+};
+
+export const RenderToScope: FC = () => {
+	const btnRef = useRef(null);
+	const [isVisible, setIsVisible] = useState(false);
+	const containerRef = useRef<HTMLDivElement | null>(null);
+
+	return (
+		<div style={{ position: 'relative' }}>
+			<div ref={containerRef} />
+			<Button innerRef={btnRef} onPress={() => setIsVisible(true)}>
+				Open modal window
+			</Button>
+			<Modal
+				visible={isVisible}
+				view="default"
+				zIndex={1}
+				onClose={() => setIsVisible(false)}
+				scope={containerRef}
+			>
+				<div style={{ padding: '1rem' }}>Et consequatur corrupti.</div>
 			</Modal>
 		</div>
 	);

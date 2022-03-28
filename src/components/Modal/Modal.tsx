@@ -1,6 +1,8 @@
 import React, { useRef, FC, RefObject } from 'react';
+import { createPortal } from 'react-dom';
 import { cn } from '@bem-react/classname';
 
+import { canUseDOM } from '../../lib/canUseDOM';
 import { IComponentHTMLElement } from '../../types/IComponent';
 import { LayerManager, OnClose } from '../LayerManager/LayerManager';
 
@@ -10,6 +12,8 @@ export const cnModal = cn('Modal');
 
 export interface IModalProps extends IComponentHTMLElement<HTMLDivElement> {
 	visible?: boolean;
+
+	keepMounted?: boolean;
 
 	contentVerticalAlign?: 'top' | 'middle' | 'bottom';
 
@@ -32,28 +36,55 @@ export interface IModalProps extends IComponentHTMLElement<HTMLDivElement> {
 	 */
 	hostRef?: RefObject<HTMLElement>;
 
+	/**
+	 * Ref on DOM element to render popup there
+	 *
+	 * This element should have `position: relative`
+	 *
+	 * If your block have `overflow hidden`, use external container to render popup to prevent clipping
+	 *
+	 * WARNING: this feature use a `createPortal`, hence it for client-side only, and SSR will skip render
+	 */
+	scope?: RefObject<HTMLElement>;
+
 	zIndex?: number;
 }
 
-// TODO: render it to portal to show it even when render called in node with `overflow: hide`
+// TODO: implement option `renderAll` as modifier, which render to DOM on SSR and render to portal on client
+// TODO: implement wrapper and modifier `renderToWindowsStack` which use context to render in stack wrapper
+
 // TODO: add vanishing animation to desktop view
-// TODO: implement and use focus catcher
+
 // TODO: implement option preventBodyScroll
-// TODO: implement keepMounted option
+// TODO: implement and use focus catcher
 export const Modal: FC<IModalProps> = ({
 	visible,
+	keepMounted,
 	contentVerticalAlign: align = 'middle',
 	onClose,
 	essentialRefs = [],
 	hostRef: propsHostRef,
 	children,
 	innerRef,
+	scope,
 	zIndex,
 	...props
 }) => {
 	const contentRef = useRef(null);
 
-	return (
+	const scopeRef = scope?.current ?? null;
+
+	// skip render on SSR
+	if (scopeRef !== null && !canUseDOM()) {
+		return null;
+	}
+
+	// skip render non visible component
+	if (!visible && !keepMounted) {
+		return null;
+	}
+
+	const renderedComponent = (
 		<LayerManager
 			visible={visible}
 			onClose={onClose}
@@ -84,6 +115,10 @@ export const Modal: FC<IModalProps> = ({
 			</div>
 		</LayerManager>
 	);
+
+	return scopeRef !== null
+		? createPortal(renderedComponent, scopeRef)
+		: renderedComponent;
 };
 
 Modal.displayName = cnModal();
