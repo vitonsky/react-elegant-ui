@@ -50,6 +50,7 @@ export const ComplexExample: FC = () => {
 				zIndex={1}
 				onClose={() => setIsVisible(false)}
 				keepMounted
+				preventBodyScroll
 			>
 				<div style={{ padding: '1rem' }}>
 					Lorem ipsum dolor sit amet.
