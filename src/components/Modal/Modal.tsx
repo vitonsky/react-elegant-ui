@@ -50,12 +50,10 @@ export interface IModalProps extends IComponentHTMLElement<HTMLDivElement> {
 	zIndex?: number;
 }
 
-// TODO: second opened window may be under previous. We should manage z-index automatically
-// TODO: implement wrapper and modifier `renderToWindowsStack` which use context to render in stack wrapper
-
-// TODO: add vanishing animation to desktop view
-
 // TODO: implement and use focus catcher
+
+// TODO: implement wrapper and modifier `renderToWindowsStack` which use context to render in stack wrapper
+// TODO: second opened window may be under previous. We should manage z-index automatically
 export const Modal: FC<IModalProps> = ({
 	visible,
 	keepMounted,
