@@ -64,6 +64,12 @@ import {
 } from '../../../src/components/Popup/__examples__/common.example';
 
 import {
+	BasicExample as ModalBasicExample,
+	ComplexExample as ModalComplexExample,
+	RenderToScope as ModalRenderToScope,
+} from '../../../src/components/Modal/__examples__/common.example';
+
+import {
 	BaseCheckbox,
 	CheckboxInlineExample,
 } from '../../../src/components/Checkbox/__examples__/common.example';
@@ -163,6 +169,21 @@ export const ComponentsListing: FC = () => (
 
 		<h2>Virtual target</h2>
 		<PopupVirtualTarget />
+
+		<h1>
+			<a id="modal" href="#modal">
+				Modal
+			</a>
+		</h1>
+
+		<h2>Basic example</h2>
+		<ModalBasicExample />
+
+		<h2>Complex example</h2>
+		<ModalComplexExample />
+
+		<h2>Render to scope</h2>
+		<ModalRenderToScope />
 
 		<h1>
 			<a id="menu" href="#menu">
