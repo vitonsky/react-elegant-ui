@@ -25,6 +25,8 @@ color:
   fillColor:
     inverse:
       value: '{color.base.value}'
+    overlay:
+      value: 'color({color.fillColor.inverse.value} a(30%) })'
     action:
       value: 'color({color.project.value} l(+15%))'
     selection:
