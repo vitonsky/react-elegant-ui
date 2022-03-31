@@ -136,7 +136,7 @@ export const Popup: FC<IPopupProps> = ({
 		return null;
 	}
 
-	// skip render a invisible
+	// skip render non visible component
 	if (!renderAll && !visible && !keepMounted) {
 		return null;
 	}

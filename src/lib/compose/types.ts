@@ -35,14 +35,14 @@ export interface HOCOptions<S extends {}> {
 	 * This props will removed when HOC is not match and other matched HOCs in compose unit
 	 * is not specified it as `matchProps` or `privateProps`
 	 */
-	privateProps?: (keyof FilterByKeys<S, string>)[];
+	privateProps?: Exclude<keyof FilterByKeys<S, string>, symbol | number>[];
 
 	/**
 	 * Array of props names that never be forward.
 	 *
 	 * Useful for props who will trigger match, but will not use in HOC
 	 */
-	matchOnlyProps?: (keyof FilterByKeys<S, string>)[];
+	matchOnlyProps?: Exclude<keyof FilterByKeys<S, string>, symbol | number>[];
 }
 
 /**
@@ -50,7 +50,7 @@ export interface HOCOptions<S extends {}> {
  */
 export type ConfigurableHOC<
 	HOCProps extends {},
-	OriginProps extends {} = {}
+	OriginProps extends {} = {},
 > = {
 	<P extends {} = {}>(Component: ComponentType<P & HOCProps>): ComponentType<
 		P & HOCProps & OriginProps
@@ -64,7 +64,7 @@ export type HOC<T> = (WrappedComponent: ComponentType) => ComponentType<T>;
  * Simply HOC for compose. It can be use instead `ConfigurableHOC`
  */
 export type SimplyHOC<Props extends {}, Origin extends {} = {}> = <
-	P extends {} = {}
+	P extends {} = {},
 >(
 	Component: ComponentType<P & Props>,
 ) => ComponentType<P & Props & Origin>;

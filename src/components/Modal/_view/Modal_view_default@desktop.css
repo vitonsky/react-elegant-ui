@@ -1,0 +1,95 @@
+.Modal.Modal_view_default {
+	display: block;
+	visibility: hidden;
+	margin: -9999px 0 0 -9999px;
+}
+
+.Modal_view_default.Modal_visible {
+	visibility: visible;
+	margin: 0;
+}
+
+.Modal_view_default .Modal-Overlay,
+.Modal_view_default .Modal-Wrapper {
+	visibility: hidden;
+	margin: -9999px 0 0 -9999px;
+}
+
+.Modal_view_default .Modal-Overlay,
+.Modal_view_default .Modal-Wrapper,
+.Modal_view_default .Modal-Content {
+	animation-duration: 0.2s;
+	animation-timing-function: ease-in-out;
+}
+
+.Modal_view_default.Modal_visible .Modal-Overlay,
+.Modal_view_default.Modal_visible .Modal-Wrapper {
+	visibility: visible;
+	margin: 0;
+}
+
+.Modal_view_default.Modal_hasAnimation .Modal-Overlay,
+.Modal_view_default.Modal_hasAnimation .Modal-Wrapper {
+	animation-name: Modal_view_default;
+}
+
+.Modal_view_default.Modal_hasAnimation .Modal-Content {
+	animation-name: Modal-Content_theme_normal;
+}
+
+.Modal_view_default.Modal_visible.Modal_hasAnimation .Modal-Overlay,
+.Modal_view_default.Modal_visible.Modal_hasAnimation .Modal-Wrapper {
+	animation-name: Modal_view_default_visible;
+}
+
+.Modal_view_default.Modal_visible.Modal_hasAnimation .Modal-Content {
+	animation-name: Modal-Content_theme_normal_visible;
+}
+
+@keyframes Modal_view_default {
+	0% {
+		visibility: visible;
+		margin: 0;
+		opacity: 1;
+	}
+
+	99% {
+		margin: 0;
+	}
+
+	100% {
+		visibility: hidden;
+		margin: -9999px 0 0 -9999px;
+		opacity: 0;
+	}
+}
+
+@keyframes Modal_view_default_visible {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes Modal-Content_theme_normal {
+	0% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(1.5);
+	}
+}
+
+@keyframes Modal-Content_theme_normal_visible {
+	0% {
+		transform: scale(0.75);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
