@@ -13,6 +13,18 @@ export const cnModal = cn('Modal');
 export interface IModalProps extends IComponentHTMLElement<HTMLDivElement> {
 	visible?: boolean;
 
+	/**
+	 * Ref on DOM element to render popup there
+	 *
+	 * This element should have `position: relative`
+	 *
+	 * If your block have `overflow hidden`, use external container to render popup to prevent clipping
+	 */
+	scope?: RefObject<HTMLElement>;
+
+	/**
+	 * Don't unmount non-visible component
+	 */
 	keepMounted?: boolean;
 
 	contentVerticalAlign?: 'top' | 'middle' | 'bottom';
@@ -35,17 +47,6 @@ export interface IModalProps extends IComponentHTMLElement<HTMLDivElement> {
 	 * @internal
 	 */
 	hostRef?: RefObject<HTMLElement>;
-
-	/**
-	 * Ref on DOM element to render popup there
-	 *
-	 * This element should have `position: relative`
-	 *
-	 * If your block have `overflow hidden`, use external container to render popup to prevent clipping
-	 *
-	 * WARNING: this feature use a `createPortal`, hence it for client-side only, and SSR will skip render
-	 */
-	scope?: RefObject<HTMLElement>;
 
 	zIndex?: number;
 }

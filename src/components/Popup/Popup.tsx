@@ -29,20 +29,11 @@ export interface IPopupProps extends IComponentHTMLElement<HTMLDivElement> {
 	 * This element should have `position: relative`
 	 *
 	 * If your block have `overflow hidden`, use external container to render popup to prevent clipping
-	 *
-	 * WARNING: this feature use a `createPortal`, hence it for client-side only, and SSR will skip render
 	 */
 	scope?: RefObject<HTMLElement>;
 
 	/**
-	 * Render content in DOM regardless of visible state. It useful for SEO purposes.
-	 *
-	 * When true, `scope` property ignore on server and component will render in call place for first render
-	 */
-	renderAll?: boolean;
-
-	/**
-	 * Like `renderAll` but don't force direct render
+	 * Don't unmount non-visible component
 	 */
 	keepMounted?: boolean;
 
@@ -103,7 +94,6 @@ export const cnPopup = cn('Popup');
  */
 export const Popup: FC<IPopupProps> = ({
 	visible,
-	renderAll,
 	keepMounted,
 	scope,
 	hasTail,
@@ -137,7 +127,7 @@ export const Popup: FC<IPopupProps> = ({
 	}
 
 	// skip render non visible component
-	if (!renderAll && !visible && !keepMounted) {
+	if (!visible && !keepMounted) {
 		return null;
 	}
 
@@ -167,30 +157,6 @@ export const Popup: FC<IPopupProps> = ({
 			</div>
 		</LayerManager>
 	);
-
-	// TODO: render it without `createPortal` on server when `renderAll` is true and switch to `createPortal` on client
-
-	// we need some hack to prevent invalidaton while hidratation
-	// for example, use hook which use SSR context and first render work as on server,
-	// but after full render content of context, it change value and force rerender content of components which use hook
-
-	//
-	// EXAMPLE
-	//
-
-	// const isSSRContext = useSSRContext();
-
-	// // Force render without `createPortal`, only for SSR and first render on client
-	// if (isSSRContext && renderAll) {
-	// 	return renderedComponent;
-	// }
-
-	// // Usual render
-	// return scopeRef !== null ? createPortal(renderedComponent, scopeRef) : renderedComponent;
-
-	//
-	// EXAMPLE
-	//
 
 	return scopeRef !== null
 		? createPortal(renderedComponent, scopeRef)

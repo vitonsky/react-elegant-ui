@@ -3,15 +3,15 @@ import { useIsReadyToCSR } from '../../../hooks/useIsReadyToCSR';
 
 import { withHOCConstructor } from '../../../lib/compose';
 
-import { IModalProps } from '../Modal';
+import { IPopupProps } from '../Popup';
 
-export interface IModModalRenderAll {
+export interface IModPopupRenderAll {
 	renderAll?: boolean;
 }
 
-export const withModModalRenderAll = withHOCConstructor<
-	IModModalRenderAll,
-	IModalProps
+export const withModPopupRenderAll = withHOCConstructor<
+	IModPopupRenderAll,
+	IPopupProps
 >(
 	{ matchProps: { renderAll: true }, matchOnlyProps: ['renderAll'] },
 	(Component) => (props) => {
