@@ -41,7 +41,6 @@ import { CompositeUnitSimple, Composition } from './types';
 // 	})
 // 	.join('\n');
 
-// TODO: start refactor here. We should make type which automatically infer new type
 /**
  * Compose HOCs with union props
  *
