@@ -6,5 +6,6 @@ dist
 package-lock.json
 
 # editors
+.idea
 .vscode
 debug.log

@@ -4,6 +4,7 @@ import { cn } from '@bem-react/classname';
 import { excludeProps } from '../excludeProps';
 import { withHOCConstructor } from './withHOCConstructor';
 
+// TODO: introduce option `visualModifiers` to get props by names from array and build className from its
 /**
  * Make visual HOC which by match exclude specified props and convert to className
  */

@@ -82,6 +82,8 @@
     --menu-size-l-font-size: 1.2rem;
     --menu-view-default-group-border-width: 1px;
     --menu-view-action-group-border-width: 1px;
+    --modal-size-m-content-indent: .4rem;
+    --modal-view-default-border-radius: 4px;
     --popup-border-radius: 4px;
     --select-border-radius: 4px;
     --spinner-size-s: 20px;

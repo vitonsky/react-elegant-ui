@@ -8,6 +8,7 @@
     --color-alert: #f00; /* error color affecting to background and typography */
     --color-warning: #f90;
     --color-fill-color-inverse: #fff;
+    --color-fill-color-overlay: rgba(255, 255, 255, 0.3);
     --color-fill-color-action: rgb(104, 86, 225);
     --color-fill-color-selection: rgb(165, 155, 237);
     --color-fill-color-hover: rgba(255, 255, 255, 0.15);
@@ -139,6 +140,8 @@
     --menu-view-action-item-typo-color-hover: #fff;
     --menu-view-action-item-typo-color-disabled: rgb(153, 153, 153);
     --menu-view-action-item-fill-color-hover: rgb(77, 56, 220);
+    --modal-view-default-fill-color: #000;
+    --modal-view-default-overlay-fill-color: rgba(255, 255, 255, 0.3);
     --popup-view-default-typo-color: #fff;
     --popup-view-default-fill-color: #000;
     --popup-view-default-border-color-shadow: rgba(153, 153, 153, 0.2);

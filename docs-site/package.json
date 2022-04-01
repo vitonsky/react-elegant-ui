@@ -5,7 +5,9 @@
 	"scripts": {
 		"dev": "NODE_OPTIONS='--inspect' next dev",
 		"build:searchIndex": "ts-node ./scripts/buildSearchIndex.ts",
-		"build": "NODE_ENV=production npm run clear && npm run build:searchIndex && next build && next export",
+		"build": "NODE_ENV=production npm run build:all",
+		"build:dev": "NODE_ENV=dev npm run build:all",
+		"build:all": "npm run clear && npm run build:searchIndex && next build && next export",
 		"deploy": "npm run build && echo '_next' > out/.nojekyll && npx gh-pages -t true -d out",
 		"clear": "rm -rf .next out public/static"
 	},

@@ -1,0 +1,16 @@
+modal:
+  size:
+    m:
+      content:
+        indent:
+          value: '{typography.controls.indent.m.value}'
+
+  viewDefault:
+    fillColor:
+      value: '{color.essential.value}'
+    borderRadius:
+      value: '{typography.controls.border.radius.value}'
+
+    overlay:
+      fillColor:
+        value: '{color.fillColor.overlay.value}'
