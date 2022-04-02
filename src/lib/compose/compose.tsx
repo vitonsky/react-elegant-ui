@@ -17,6 +17,7 @@ import {
 import { getDisplayName } from '../getDisplayName';
 import { UnionToIntersection } from '../../types/utility-types';
 
+// TODO: make work `composeUD` as part of wrappers. At this time it's work but only whin apply outside of `compose` invoke
 /**
  * Compose HOCs
  *

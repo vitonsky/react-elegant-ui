@@ -56,3 +56,30 @@ export type UnionToIntersection<U> = (
 ) extends (k: infer I) => void
 	? I
 	: never;
+
+// TODO: move to composer library
+/**
+ * Make intersection type from union type.
+ *
+ * For objects merge all properties to one object and make intersection types for each one
+ *
+ * WARNING: this type is under construction, so must not be used outside of library
+ */
+export type ComplexUnionToIntersection<U> = { o: U } extends { o: infer X }
+	? {
+			[K in keyof (X & U)]: (X & U)[K];
+	  }
+	: UnionToIntersection<U>;
+
+// // TODO: result of test case must be `{foo: 1 | 2; bar: 3}`
+// type testCase1 = ComplexUnionToIntersection<{ foo: 1 } | { foo: 2; bar: 3 }>;
+
+// // TODO: result of test case must be `{foo: 1 | 2 | 7; bar: 3 | 8}`
+// type testCase2 = ComplexUnionToIntersection<
+// 	{ foo: 1 } | { foo: 2; bar: 3 } | { foo: 7; bar: 8 }
+// >;
+
+// // TODO: result of test case must be `{foo: 1 | 2; bar: 8}`
+// type testCase3 = ComplexUnionToIntersection<
+// 	{ foo: 1 } | { foo: 2; bar: 3 } | { bar: 8 }
+// >;
