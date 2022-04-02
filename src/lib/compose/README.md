@@ -1,19 +1,19 @@
-Library for make and compose high order components.
+Library to make and compose high order components.
 
 ## Why?
 
-This library help to define a HOCs with typical behavior, like exclude a properties of non-matched HOCs
-or enable HOCs by match props values, but exclude this props.
+This library is need to define a HOCs with typical behavior, like exclude a properties of non-matched HOCs
+and to enable HOCs by match props values, with removing thats props.
 
-This give you control under HOCs and simplify usage of it, especial when you have many HOCs.
+This give you control over HOCs and simplify usage of it, especial when you have many HOCs.
 
 ## How it work?
 
-When you make HOC with hepler function, you make wrapper with utility properties for your HOC.
+When you make HOC with helper function, you make wrapper with utility properties for your HOC.
 
-When you use compose functions, it consider utility properties of HOCs (if exists) and handle it.
+When you use compose functions, it's consider utility properties of HOCs (if exists) and handle it.
 
-In one compose you can use HOCs and ordinary HOCs, who is not have utility props.
+In one compose you can use special HOCs and ordinary HOCs which is not have special props for composer.
 
 You can use HOC objects as ordinary HOCs, cuz it just functional component, but then logic of applying will not work.
 

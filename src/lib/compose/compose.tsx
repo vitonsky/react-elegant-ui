@@ -17,7 +17,8 @@ import {
 
 import { getDisplayName } from '../getDisplayName';
 
-// TODO: make work `composeUD` as part of wrappers. At this time it's work but only whin apply outside of `compose` invoke
+// TODO: make work `composeUD` as part of wrappers
+// At this time it's work but only when apply outside of `compose` invoke
 /**
  * Compose HOCs
  *
