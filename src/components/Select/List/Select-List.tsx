@@ -1,7 +1,7 @@
 import React, { createContext, FC, useContext } from 'react';
 import { useComponentRegistry } from '@bem-react/di';
 
-import { DeepUnion2 } from '../../../types/union';
+import { ComplexUnionToIntersection } from '../../../types/utility-types';
 
 import { IMenuDesktopProps } from '../../Menu/Menu@desktop';
 import { IModMenuTypeCheckbox } from '../../Menu/_type/Menu_type_checkbox';
@@ -13,7 +13,7 @@ import './Select-List.css';
 
 export interface ISelectList
 	extends IMenuDesktopProps,
-		DeepUnion2<IModMenuTypeCheckbox, IModMenuTypeRadio> {
+		ComplexUnionToIntersection<IModMenuTypeCheckbox | IModMenuTypeRadio> {
 	visible?: boolean;
 }
 
