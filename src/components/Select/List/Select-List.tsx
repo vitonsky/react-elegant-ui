@@ -1,7 +1,7 @@
 import React, { createContext, FC, useContext } from 'react';
 import { useComponentRegistry } from '@bem-react/di';
 
-import { ComplexUnionToIntersection } from '../../../types/utility-types';
+import { ComplexUnionToIntersection } from '../../../lib/compose';
 
 import { IMenuDesktopProps } from '../../Menu/Menu@desktop';
 import { IModMenuTypeCheckbox } from '../../Menu/_type/Menu_type_checkbox';

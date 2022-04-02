@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 
-import { ComplexUnionToIntersection } from '../../types/utility-types';
 import { getDisplayName } from '../getDisplayName';
 
 import {
@@ -11,6 +10,7 @@ import {
 	getPropsFromHOCOptions,
 } from './utils';
 import {
+	ComplexUnionToIntersection,
 	CompositeUnitSimple,
 	Composition,
 	InferStructFromCompositeUnit,
