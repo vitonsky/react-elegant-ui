@@ -100,3 +100,54 @@ export type ExtractProps<T> = T extends ComponentType<infer K>
 export type Composition<T> = <U extends ComponentType<any>>(
 	fn: U,
 ) => FC<JSX.LibraryManagedAttributes<U, ExtractProps<U>> & T>;
+
+/**
+ * Useful to infer type from `CompositeUnitSimple`
+ *
+ * It may use with union types to apply for each naked type in union
+ */
+export type InferStructFromCompositeUnit<T> = T extends CompositeUnitSimple<
+	infer X
+>
+	? X extends {}
+		? X
+		: never
+	: T;
+
+//
+// Intersection to union
+//
+
+/**
+ * Make intersection type from union type
+ *
+ * For more info see: https://fettblog.eu/typescript-union-to-intersection/
+ *
+ * @example
+ * // return `{foo: 1} & {bar: 2}`
+ * type intersection = UnionToIntersection<{foo: 1} | {bar: 2}>;
+ */
+export type UnionToIntersection<U> = (
+	U extends any ? (k: U) => void : never
+) extends (k: infer I) => void
+	? I
+	: never;
+
+type AllKeys<T> = T extends unknown ? keyof T : never;
+type AddMissingProps<T, K extends PropertyKey = AllKeys<T>> = T extends unknown
+	? T & Record<Exclude<K, keyof T>, never>
+	: never;
+
+/**
+ * Object type which contain properties of all objects of union type, but values will intersections
+ *
+ * NOTE: it's not deep function, so objects properties on level 2 and higher will not changed
+ *
+ * @example
+ * // return `{foo?: 1 | 2 | undefined; bar: 3 | 8}`
+ * type intersection = ObjectsUnionToIntersection<{ foo: 1 } | { foo?: 2; bar: 3 } | { bar: 8 }>
+ */
+export type ObjectsUnionToIntersection<T> = {
+	[K in keyof AddMissingProps<T>]: AddMissingProps<T>[K];
+};
+// type UnionToIntersectionForAll<T> = UnionToIntersection<T extends any ? T extends Record<any, any> ? ComplexUnionToIntersection<T> : UnionToIntersection<T> : never>;

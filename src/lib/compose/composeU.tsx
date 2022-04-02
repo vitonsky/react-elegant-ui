@@ -1,16 +1,5 @@
 import React, { FC } from 'react';
 
-import {
-	DeepUnion2,
-	DeepUnion3,
-	DeepUnion4,
-	DeepUnion5,
-	DeepUnion6,
-	DeepUnion7,
-	DeepUnion8,
-	DeepUnion9,
-	DeepUnion10,
-} from '../../types/union';
 import { getDisplayName } from '../getDisplayName';
 
 import {
@@ -20,110 +9,18 @@ import {
 	getObjectHash,
 	getPropsFromHOCOptions,
 } from './utils';
-import { CompositeUnitSimple, Composition } from './types';
+import {
+	ObjectsUnionToIntersection,
+	CompositeUnitSimple,
+	Composition,
+	InferStructFromCompositeUnit,
+} from './types';
 
-// To generate reloads just run this:
-// Array(10)
-// 	.fill(1)
-// 	.map((_, idx) => {
-// 		const num = idx + 1;
-// 		const nums = Array(num)
-// 			.fill(1)
-// 			.map((_, id) => id);
-// 		const Types = nums.map((id) => 'T' + (id + 1));
-// 		const generics = Types.join(', ');
-// 		const args = Types.map(
-// 			(T, idx) => `fn${idx + 1}: CompositeUnitSimple<${T}>`,
-// 		).join(',');
-// 		const result =
-// 			num == 1 ? Types[0] : `DeepUnion${num}<${Types.join(', ')}>`;
-// 		return `export function composeU<${generics}>(${args}): Composition<${result}>;`;
-// 	})
-// 	.join('\n');
-
-/**
- * Compose HOCs with union props
- *
- * Will apply firsh matched HOC
- *
- * All private props for unmatched HOCs will removed
- */
-export function composeU<T1>(fn1: CompositeUnitSimple<T1>): Composition<T1>;
-export function composeU<T1, T2>(
-	fn1: CompositeUnitSimple<T1>,
-	fn2: CompositeUnitSimple<T2>,
-): Composition<DeepUnion2<T1, T2>>;
-export function composeU<T1, T2, T3>(
-	fn1: CompositeUnitSimple<T1>,
-	fn2: CompositeUnitSimple<T2>,
-	fn3: CompositeUnitSimple<T3>,
-): Composition<DeepUnion3<T1, T2, T3>>;
-export function composeU<T1, T2, T3, T4>(
-	fn1: CompositeUnitSimple<T1>,
-	fn2: CompositeUnitSimple<T2>,
-	fn3: CompositeUnitSimple<T3>,
-	fn4: CompositeUnitSimple<T4>,
-): Composition<DeepUnion4<T1, T2, T3, T4>>;
-export function composeU<T1, T2, T3, T4, T5>(
-	fn1: CompositeUnitSimple<T1>,
-	fn2: CompositeUnitSimple<T2>,
-	fn3: CompositeUnitSimple<T3>,
-	fn4: CompositeUnitSimple<T4>,
-	fn5: CompositeUnitSimple<T5>,
-): Composition<DeepUnion5<T1, T2, T3, T4, T5>>;
-export function composeU<T1, T2, T3, T4, T5, T6>(
-	fn1: CompositeUnitSimple<T1>,
-	fn2: CompositeUnitSimple<T2>,
-	fn3: CompositeUnitSimple<T3>,
-	fn4: CompositeUnitSimple<T4>,
-	fn5: CompositeUnitSimple<T5>,
-	fn6: CompositeUnitSimple<T6>,
-): Composition<DeepUnion6<T1, T2, T3, T4, T5, T6>>;
-export function composeU<T1, T2, T3, T4, T5, T6, T7>(
-	fn1: CompositeUnitSimple<T1>,
-	fn2: CompositeUnitSimple<T2>,
-	fn3: CompositeUnitSimple<T3>,
-	fn4: CompositeUnitSimple<T4>,
-	fn5: CompositeUnitSimple<T5>,
-	fn6: CompositeUnitSimple<T6>,
-	fn7: CompositeUnitSimple<T7>,
-): Composition<DeepUnion7<T1, T2, T3, T4, T5, T6, T7>>;
-export function composeU<T1, T2, T3, T4, T5, T6, T7, T8>(
-	fn1: CompositeUnitSimple<T1>,
-	fn2: CompositeUnitSimple<T2>,
-	fn3: CompositeUnitSimple<T3>,
-	fn4: CompositeUnitSimple<T4>,
-	fn5: CompositeUnitSimple<T5>,
-	fn6: CompositeUnitSimple<T6>,
-	fn7: CompositeUnitSimple<T7>,
-	fn8: CompositeUnitSimple<T8>,
-): Composition<DeepUnion8<T1, T2, T3, T4, T5, T6, T7, T8>>;
-export function composeU<T1, T2, T3, T4, T5, T6, T7, T8, T9>(
-	fn1: CompositeUnitSimple<T1>,
-	fn2: CompositeUnitSimple<T2>,
-	fn3: CompositeUnitSimple<T3>,
-	fn4: CompositeUnitSimple<T4>,
-	fn5: CompositeUnitSimple<T5>,
-	fn6: CompositeUnitSimple<T6>,
-	fn7: CompositeUnitSimple<T7>,
-	fn8: CompositeUnitSimple<T8>,
-	fn9: CompositeUnitSimple<T9>,
-): Composition<DeepUnion9<T1, T2, T3, T4, T5, T6, T7, T8, T9>>;
-export function composeU<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(
-	fn1: CompositeUnitSimple<T1>,
-	fn2: CompositeUnitSimple<T2>,
-	fn3: CompositeUnitSimple<T3>,
-	fn4: CompositeUnitSimple<T4>,
-	fn5: CompositeUnitSimple<T5>,
-	fn6: CompositeUnitSimple<T6>,
-	fn7: CompositeUnitSimple<T7>,
-	fn8: CompositeUnitSimple<T8>,
-	fn9: CompositeUnitSimple<T9>,
-	fn10: CompositeUnitSimple<T10>,
-): Composition<DeepUnion10<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>>;
-export function composeU<T = any>(
-	...wrappers: CompositeUnitSimple<any>[]
-): Composition<T>;
+export function composeU<T extends CompositeUnitSimple<any>[]>(
+	...wrappers: T
+): T extends Array<infer X>
+	? Composition<ObjectsUnionToIntersection<InferStructFromCompositeUnit<X>>>
+	: never;
 export function composeU(
 	...wrappers: CompositeUnitSimple<any>[]
 ): Composition<any> {
