@@ -10,7 +10,7 @@ import {
 	getPropsFromHOCOptions,
 } from './utils';
 import {
-	ComplexUnionToIntersection,
+	ObjectsUnionToIntersection,
 	CompositeUnitSimple,
 	Composition,
 	InferStructFromCompositeUnit,
@@ -19,7 +19,7 @@ import {
 export function composeU<T extends CompositeUnitSimple<any>[]>(
 	...wrappers: T
 ): T extends Array<infer X>
-	? Composition<ComplexUnionToIntersection<InferStructFromCompositeUnit<X>>>
+	? Composition<ObjectsUnionToIntersection<InferStructFromCompositeUnit<X>>>
 	: never;
 export function composeU(
 	...wrappers: CompositeUnitSimple<any>[]

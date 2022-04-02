@@ -133,50 +133,21 @@ export type UnionToIntersection<U> = (
 	? I
 	: never;
 
-// TODO: move to composer library
-/**
- * Make intersection type from union type.
- *
- * For objects merge all properties to one object and make intersection types for each one
- *
- * WARNING: this type is under construction, so must not be used outside of library
- */
-// export type ComplexUnionToIntersection<U> = { o: U } extends { o: infer X }
-// 	? {
-// 			[K in keyof (X & U)]: (X & U)[K];
-// 	  }
-// 	: UnionToIntersection<U>;
-
-// Info: https://stackoverflow.com/a/67577722/18680275
-type Intersection<A, B> = A & B extends infer U
-	? { [P in keyof U]: U[P] }
-	: never;
-
-type Matching<T, SomeInterface> = {
-	[K in keyof T]: SomeInterface extends T[K] ? K : never;
-}[keyof T];
-
-type NonMatching<T, SomeInterface> = {
-	[K in keyof T]: SomeInterface extends T[K] ? never : K;
-}[keyof T];
-
 type AllKeys<T> = T extends unknown ? keyof T : never;
-type Idx<T, K extends PropertyKey> = T extends unknown
-	? K extends keyof T
-		? T[K]
-		: never
+type AddMissingProps<T, K extends PropertyKey = AllKeys<T>> = T extends unknown
+	? T & Record<Exclude<K, keyof T>, never>
 	: never;
-type ConditionalOptional<T> = Intersection<
-	Partial<Pick<T, Matching<T, undefined>>>,
-	Required<Pick<T, NonMatching<T, undefined>>>
->;
 
-// Info: https://stackoverflow.com/questions/71717475/how-to-make-one-object-type-which-will-contain-properties-of-all-objects-of-unio?noredirect=1#comment126744150_71717475
-export type ComplexUnionToIntersection<T> = ConditionalOptional<{
-	[K in AllKeys<T>]: Idx<T, K>;
-}>;
-export type UnionToIntersectionDeep<U> = {
-	[K in keyof ComplexUnionToIntersection<U>]: ComplexUnionToIntersection<
-		ComplexUnionToIntersection<U>[K]
-	>;
+/**
+ * Object type which contain properties of all objects of union type, but values will intersections
+ *
+ * NOTE: it's not deep function, so objects properties on level 2 and higher will not changed
+ *
+ * @example
+ * // return `{foo?: 1 | 2 | undefined; bar: 3 | 8}`
+ * type intersection = ObjectsUnionToIntersection<{ foo: 1 } | { foo?: 2; bar: 3 } | { bar: 8 }>
+ */
+export type ObjectsUnionToIntersection<T> = {
+	[K in keyof AddMissingProps<T>]: AddMissingProps<T>[K];
 };
+// type UnionToIntersectionForAll<T> = UnionToIntersection<T extends any ? T extends Record<any, any> ? ComplexUnionToIntersection<T> : UnionToIntersection<T> : never>;
