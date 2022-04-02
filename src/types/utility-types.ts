@@ -65,21 +65,42 @@ export type UnionToIntersection<U> = (
  *
  * WARNING: this type is under construction, so must not be used outside of library
  */
-export type ComplexUnionToIntersection<U> = { o: U } extends { o: infer X }
-	? {
-			[K in keyof (X & U)]: (X & U)[K];
-	  }
-	: UnionToIntersection<U>;
+// export type ComplexUnionToIntersection<U> = { o: U } extends { o: infer X }
+// 	? {
+// 			[K in keyof (X & U)]: (X & U)[K];
+// 	  }
+// 	: UnionToIntersection<U>;
 
-// // TODO: result of test case must be `{foo: 1 | 2; bar: 3}`
-// type testCase1 = ComplexUnionToIntersection<{ foo: 1 } | { foo: 2; bar: 3 }>;
+// Info: https://stackoverflow.com/a/67577722/18680275
+type Intersection<A, B> = A & B extends infer U
+	? { [P in keyof U]: U[P] }
+	: never;
 
-// // TODO: result of test case must be `{foo: 1 | 2 | 7; bar: 3 | 8}`
-// type testCase2 = ComplexUnionToIntersection<
-// 	{ foo: 1 } | { foo: 2; bar: 3 } | { foo: 7; bar: 8 }
-// >;
+type Matching<T, SomeInterface> = {
+	[K in keyof T]: SomeInterface extends T[K] ? K : never;
+}[keyof T];
 
-// // TODO: result of test case must be `{foo: 1 | 2; bar: 8}`
-// type testCase3 = ComplexUnionToIntersection<
-// 	{ foo: 1 } | { foo: 2; bar: 3 } | { bar: 8 }
-// >;
+type NonMatching<T, SomeInterface> = {
+	[K in keyof T]: SomeInterface extends T[K] ? never : K;
+}[keyof T];
+
+type AllKeys<T> = T extends unknown ? keyof T : never;
+type Idx<T, K extends PropertyKey> = T extends unknown
+	? K extends keyof T
+		? T[K]
+		: never
+	: never;
+type ConditionalOptional<T> = Intersection<
+	Partial<Pick<T, Matching<T, undefined>>>,
+	Required<Pick<T, NonMatching<T, undefined>>>
+>;
+
+// Info: https://stackoverflow.com/questions/71717475/how-to-make-one-object-type-which-will-contain-properties-of-all-objects-of-unio?noredirect=1#comment126744150_71717475
+export type ComplexUnionToIntersection<T> = ConditionalOptional<{
+	[K in AllKeys<T>]: Idx<T, K>;
+}>;
+export type UnionToIntersectionDeep<U> = {
+	[K in keyof ComplexUnionToIntersection<U>]: ComplexUnionToIntersection<
+		ComplexUnionToIntersection<U>[K]
+	>;
+};
