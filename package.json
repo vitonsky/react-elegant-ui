@@ -53,7 +53,7 @@
 		"@yandex/themekit": "^1.6.7",
 		"babel-plugin-inline-react-svg": "^2.0.1",
 		"dictionary-en": "^3.1.0",
-		"eslint": "^7.16.0",
+		"eslint": "^8.16.0",
 		"eslint-plugin-react-hooks": "^4.2.0",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
