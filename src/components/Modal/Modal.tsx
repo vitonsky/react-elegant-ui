@@ -27,6 +27,11 @@ export interface IModalProps extends IComponentHTMLElement<HTMLDivElement> {
 	 */
 	keepMounted?: boolean;
 
+	/**
+	 * Don't render a backdrop
+	 */
+	hideBackdrop?: boolean;
+
 	contentVerticalAlign?: 'top' | 'middle' | 'bottom';
 
 	/**
@@ -63,6 +68,7 @@ export const Modal: FC<IModalProps> = ({
 	innerRef,
 	scope,
 	zIndex,
+	hideBackdrop,
 	...props
 }) => {
 	const contentRef = useRef(null);
@@ -91,7 +97,7 @@ export const Modal: FC<IModalProps> = ({
 				className={cnModal({ visible }, [props.className])}
 				style={{ zIndex, ...props.style }}
 			>
-				<div className={cnModal('Overlay')} />
+				{!hideBackdrop && <div className={cnModal('Overlay')} />}
 				<div className={cnModal('Wrapper')}>
 					<div className={cnModal('Table')}>
 						<div className={cnModal('Cell', { align })}>
