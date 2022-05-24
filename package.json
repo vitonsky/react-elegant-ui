@@ -38,7 +38,7 @@
 		"@babel/plugin-transform-modules-commonjs": "^7.14.0",
 		"@babel/preset-react": "^7.13.13",
 		"@bem-react/classname": "^1.5.8",
-		"@bem-react/di": "^2.2.5",
+		"@bem-react/di": "^3.1.1",
 		"@commitlint/cli": "^17.0.0",
 		"@commitlint/config-conventional": "^17.0.0",
 		"@popperjs/core": "^2.9.0",
@@ -79,7 +79,7 @@
 	},
 	"peerDependencies": {
 		"@bem-react/classname": "^1.5.8",
-		"@bem-react/di": "^2.2.5",
+		"@bem-react/di": "^3.1.1",
 		"@popperjs/core": "^2.9.0",
 		"@react-aria/interactions": "^3.3.4",
 		"@react-aria/utils": "^3.7.0",
