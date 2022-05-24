@@ -27,20 +27,21 @@
 	height: 100%;
 }
 
+.Modal-Wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	flex-wrap: wrap;
+}
+
 .Modal.Modal_visible {
 	display: block;
 }
 
-.Modal-Table {
-	display: table;
-
-	width: 100%;
-	height: 100%;
-}
-
 .Modal-Cell {
-	display: table-cell;
-
+	max-width: 100%;
+	box-sizing: border-box;
 	text-align: center;
 }
 
@@ -68,6 +69,8 @@
 	outline: none;
 
 	transform: translate3d(0, 0, 0); /* 1 */
+
+	max-width: 100%;
 }
 
 .Modal-Overlay {
