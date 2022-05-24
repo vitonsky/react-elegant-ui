@@ -14,6 +14,7 @@ import { withModButtonViewDefault } from '../_view/Button_view_default';
 import { withModButtonViewAction } from '../_view/Button_view_action';
 import { withModButtonViewPseudo } from '../_view/Button_view_pseudo';
 import { withModButtonViewClear } from '../_view/Button_view_clear';
+import { withModButtonViewLink } from '../_view/Button_view_link';
 
 // _size
 import { withModButtonSizeS } from '../_size/Button_size_s';
@@ -33,6 +34,7 @@ export const Button = compose(
 		withModButtonViewAction,
 		withModButtonViewPseudo,
 		withModButtonViewClear,
+		withModButtonViewLink,
 	),
 	composeU(withModButtonSizeS, withModButtonSizeM, withModButtonSizeL),
 	composeU(withModButtonWidthMax),

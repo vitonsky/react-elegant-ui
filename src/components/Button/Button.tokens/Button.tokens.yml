@@ -133,3 +133,13 @@ button:
         value: '{color.control.typo.primary.value}'
       disabled:
         value: '{color.control.typo.disabled.value}'
+
+  viewLink:
+    outlineColor:
+      value: '{color.control.borderColor.prism.value}'
+
+    typoColor:
+      base:
+        value: '{color.link.base.value}'
+      disabled:
+        value: '{color.control.type.default.typo.disabled.value}'

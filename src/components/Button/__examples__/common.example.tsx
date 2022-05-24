@@ -4,7 +4,7 @@ import { Button } from '../Button.bundle/desktop';
 import { ButtonContent } from '../Content/Button-Content';
 import { Icon } from '../../Icon/Icon.bundle/desktop';
 
-const buttonViews = ['action', 'default', 'pseudo', 'clear'] as const;
+const buttonViews = ['action', 'default', 'pseudo', 'clear', 'link'] as const;
 
 export const View = () => (
 	<>

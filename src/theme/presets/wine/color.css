@@ -112,6 +112,9 @@
     --button-view-pseudo-fill-color-hovered: rgb(71, 0, 0);
     --button-view-pseudo-typo-color-base: #fff;
     --button-view-pseudo-typo-color-disabled: rgb(153, 153, 153);
+    --button-view-link-outline-color: #fff;
+    --button-view-link-typo-color-base: #327cff;
+    --button-view-link-typo-color-disabled: rgb(153, 153, 153);
     --checkbox-outline-color: #fff;
     --checkbox-box-fill-color-base: rgb(64, 64, 64);
     --checkbox-box-fill-color-hover: rgb(77, 77, 77);
