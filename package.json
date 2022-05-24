@@ -60,7 +60,7 @@
 		"gulp-cli": "^2.3.0",
 		"gulp-typescript": "^6.0.0-alpha.1",
 		"husky": "^7.0.1",
-		"lint-staged": "^11.0.0",
+		"lint-staged": "^12.4.2",
 		"merge-stream": "^2.0.0",
 		"plugin-error": "^1.0.1",
 		"prettier": "^2.2.1",
