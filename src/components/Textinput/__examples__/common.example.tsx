@@ -14,7 +14,7 @@ export const TextinputBase: FC<TextinputProps> = ({
 		<Textinput
 			{...props}
 			value={value}
-			onChange={(evt) => setValue(evt.target.value)}
+			onInputText={setValue}
 			onClearClick={() => {
 				setValue('');
 			}}

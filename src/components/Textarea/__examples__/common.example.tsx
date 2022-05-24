@@ -13,7 +13,7 @@ export const TextareaBase: FC<TextareaProps> = ({
 		<Textarea
 			{...props}
 			value={value}
-			onChange={(evt) => setValue(evt.target.value)}
+			onInputText={setValue}
 			onClearClick={() => {
 				setValue('');
 			}}

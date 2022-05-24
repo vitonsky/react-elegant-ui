@@ -6,6 +6,7 @@ import {
 	IComponentHTMLElement,
 	IComponentWithControlProps,
 } from '../../types/IComponent';
+import { makeChain } from '../../lib/makeChain';
 
 import './Textarea.css';
 
@@ -41,6 +42,11 @@ export interface ITextareaProps
 	 * Extension slot
 	 */
 	addonAfterControl?: ReactNode;
+
+	/**
+	 * Fire on change value by user input
+	 */
+	onInputText?: (text: string) => void;
 }
 
 export const Textarea: FC<ITextareaProps> = ({
@@ -49,6 +55,7 @@ export const Textarea: FC<ITextareaProps> = ({
 	disabled,
 	placeholder,
 	spellCheck,
+	onInputText,
 
 	hint,
 	state,
@@ -64,21 +71,28 @@ export const Textarea: FC<ITextareaProps> = ({
 	const controlPropsMix = useMemo(
 		() => ({
 			value,
-			onChange,
 			disabled,
 			placeholder,
 			spellCheck,
 			...controlProps,
+			onChange: makeChain(controlProps?.onChange, onChange, (evt) => {
+				if (onInputText === undefined) return;
+				onInputText(evt.target.value);
+			}),
 		}),
-		[value, onChange, disabled, placeholder, spellCheck, controlProps],
+		[
+			value,
+			disabled,
+			placeholder,
+			spellCheck,
+			controlProps,
+			onChange,
+			onInputText,
+		],
 	);
 
-	const {
-		Wrap,
-		Control,
-		Box,
-		Hint,
-	} = useComponentRegistry<ITextareaRegistry>(cnTextarea());
+	const { Wrap, Control, Box, Hint } =
+		useComponentRegistry<ITextareaRegistry>(cnTextarea());
 
 	return (
 		<div

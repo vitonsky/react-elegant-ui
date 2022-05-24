@@ -6,12 +6,12 @@ import {
 	IComponentHTMLElement,
 	IComponentWithControlProps,
 } from '../../types/IComponent';
+import { makeChain } from '../../lib/makeChain';
 
 import './Textinput.css';
 
 import { ITextinputControl } from './Control/Textinput-Control';
 import { ITextinputRegistry } from './Textinput.registry';
-import { makeChain } from '../../lib/makeChain';
 
 export const cnTextinput = cn('Textinput');
 
@@ -54,6 +54,11 @@ export interface ITextinputProps
 	 * Icon slot
 	 */
 	iconRight?: ReactElement;
+
+	/**
+	 * Fire on change value by user input
+	 */
+	onInputText?: (text: string) => void;
 }
 
 export const Textinput: FC<ITextinputProps> = ({
@@ -63,6 +68,7 @@ export const Textinput: FC<ITextinputProps> = ({
 	disabled,
 	placeholder,
 	spellCheck,
+	onInputText,
 
 	addonBeforeControl,
 	addonAfterControl,
@@ -83,30 +89,24 @@ export const Textinput: FC<ITextinputProps> = ({
 			placeholder,
 			spellCheck,
 			...controlProps,
-			onChange: makeChain(onChange, controlProps?.onChange, (evt) => {
-				if (setValue !== undefined) {
-					setValue(evt.target.value);
-				}
+			onChange: makeChain(controlProps?.onChange, onChange, (evt) => {
+				if (onInputText === undefined) return;
+				onInputText(evt.target.value);
 			}),
 		}),
 		[
 			value,
-			onChange,
-			setValue,
 			disabled,
 			placeholder,
 			spellCheck,
 			controlProps,
+			onChange,
+			onInputText,
 		],
 	);
 
-	const {
-		Wrap,
-		Control,
-		Icon,
-		Box,
-		Hint,
-	} = useComponentRegistry<ITextinputRegistry>(cnTextinput());
+	const { Wrap, Control, Icon, Box, Hint } =
+		useComponentRegistry<ITextinputRegistry>(cnTextinput());
 
 	return (
 		<div
