@@ -23,6 +23,7 @@
   "ignoreFiles": [
     "**/*.ts",
     "**/*.tsx",
+    "**/*.js",
     "dist/**",
     "examples/components-list/dist/**",
     "src/theme/presets/**/*.css"
