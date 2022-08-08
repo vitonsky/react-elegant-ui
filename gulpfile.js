@@ -4,7 +4,7 @@ const mergeStream = require('merge-stream');
 const babel = require('gulp-babel');
 const { extendDefaultPlugins } = require('svgo');
 
-const cleanPackageJson = require('./scripts/gulp/cleanPackageJson');
+const cleanPackage = require('gulp-clean-package');
 
 const buildDir = 'dist';
 
@@ -95,7 +95,7 @@ function makeCJSFromESM() {
 function copyMetaFiles() {
 	return mergeStream(
 		// Clean package.json
-		gulp.src(['./package.json']).pipe(cleanPackageJson()),
+		gulp.src(['./package.json']).pipe(cleanPackage()),
 		// Copy other
 		gulp.src(['./README.md', './src/custom.d.ts']),
 	).pipe(gulp.dest(buildDir));
