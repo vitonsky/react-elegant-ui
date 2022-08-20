@@ -66,8 +66,8 @@
 		"plugin-error": "^1.0.1",
 		"prettier": "^2.2.1",
 		"prop-types": "^15.7.2",
-		"react": "^17.0.2",
-		"react-dom": "^17.0.2",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
 		"react-shadow": "^19.0.2",
 		"stylelint": "^14.10.0",
 		"stylelint-config-standard": "^27.0.0",
@@ -85,8 +85,8 @@
 		"@react-aria/interactions": "^3.3.4",
 		"@react-aria/utils": "^3.7.0",
 		"@types/resize-observer-browser": "^0.1.4",
-		"react": "^16.8.4 || ^17.0.0",
-		"react-dom": "^16.8.4 || ^17.0.0"
+		"react": ">=16.8.4",
+		"react-dom": ">=16.8.4"
 	},
 	"engines": {
 		"node": "^10 || ^12 || >=14"
