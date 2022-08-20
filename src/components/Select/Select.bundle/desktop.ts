@@ -1,4 +1,4 @@
-import { withRegistry } from '@bem-react/di';
+import { withRegistry } from '../../../lib/di';
 
 import { compose, composeU, ExtractProps } from '../../../lib/compose';
 

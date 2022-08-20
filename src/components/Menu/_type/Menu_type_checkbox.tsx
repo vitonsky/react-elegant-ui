@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../../lib/di';
 
 import { withHOCConstructor } from '../../../lib/compose';
 import { findIndexLoop } from '../../../lib/findIndexLoop';
@@ -74,82 +74,82 @@ export const withModMenuTypeCheckbox = withHOCConstructor<
 		matchProps: { type: 'checkbox' },
 		privateProps: ['type', 'value', 'setValue'],
 	},
-	(Menu) => ({
-		type,
-		items,
-		isFocused,
-		onPick,
-		value,
-		setValue,
-		cursorIndex,
-		setCursorIndex,
-		...props
-	}) => {
-		const componentsRegistry = useComponentRegistry<IMenuSelectedItemRegistry>(
-			cnMenu(),
-		);
+	(Menu) =>
+		({
+			type,
+			items,
+			isFocused,
+			onPick,
+			value,
+			setValue,
+			cursorIndex,
+			setCursorIndex,
+			...props
+		}) => {
+			const componentsRegistry =
+				useComponentRegistry<IMenuSelectedItemRegistry>(cnMenu());
 
-		const wrappedItems = useMemo(
-			() => wrapItems(componentsRegistry, items, value),
-			[componentsRegistry, items, value],
-		);
+			const wrappedItems = useMemo(
+				() => wrapItems(componentsRegistry, items, value),
+				[componentsRegistry, items, value],
+			);
 
-		// Focus cursor on selected element
-		useEffect(() => {
-			if (
-				isFocused &&
-				setCursorIndex !== undefined &&
-				(cursorIndex === undefined || cursorIndex === -1) &&
-				value
-			) {
-				const selectedItemIndex = findIndexLoop(
-					flattenItemsWithoutEmptyGroups(items),
-					(item) =>
-						isAvailableItem(item) &&
-						value.length > 0 &&
-						value.indexOf(item.id) > -1,
-				);
+			// Focus cursor on selected element
+			useEffect(() => {
+				if (
+					isFocused &&
+					setCursorIndex !== undefined &&
+					(cursorIndex === undefined || cursorIndex === -1) &&
+					value
+				) {
+					const selectedItemIndex = findIndexLoop(
+						flattenItemsWithoutEmptyGroups(items),
+						(item) =>
+							isAvailableItem(item) &&
+							value.length > 0 &&
+							value.indexOf(item.id) > -1,
+					);
 
-				if (selectedItemIndex !== -1) {
-					setCursorIndex(selectedItemIndex);
-				}
-			}
-			// need execute this only by change isFocused
-			// eslint-disable-next-line react-hooks/exhaustive-deps
-		}, [isFocused]);
-
-		return (
-			<Menu
-				{...props}
-				{...{
-					cursorIndex,
-					setCursorIndex,
-					isFocused,
-				}}
-				aria-multiselectable
-				items={wrappedItems}
-				onPick={(id, idx) => {
-					if (onPick !== undefined) {
-						onPick(id, idx);
+					if (selectedItemIndex !== -1) {
+						setCursorIndex(selectedItemIndex);
 					}
+				}
+				// need execute this only by change isFocused
+				// eslint-disable-next-line react-hooks/exhaustive-deps
+			}, [isFocused]);
 
-					if (setValue !== undefined) {
-						if (value === undefined || value.length === 0) {
-							setValue([id]);
-							return;
+			return (
+				<Menu
+					{...props}
+					{...{
+						cursorIndex,
+						setCursorIndex,
+						isFocused,
+					}}
+					aria-multiselectable
+					items={wrappedItems}
+					onPick={(id, idx) => {
+						if (onPick !== undefined) {
+							onPick(id, idx);
 						}
 
-						const filtred = value.filter(
-							(localId) => localId !== id,
-						);
-						setValue(
-							filtred.length !== value.length
-								? filtred
-								: filtred.concat(id),
-						);
-					}
-				}}
-			/>
-		);
-	},
+						if (setValue !== undefined) {
+							if (value === undefined || value.length === 0) {
+								setValue([id]);
+								return;
+							}
+
+							const filtred = value.filter(
+								(localId) => localId !== id,
+							);
+							setValue(
+								filtred.length !== value.length
+									? filtred
+									: filtred.concat(id),
+							);
+						}
+					}}
+				/>
+			);
+		},
 );

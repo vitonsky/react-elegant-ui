@@ -1,6 +1,6 @@
 import React, { FC, Ref, useMemo } from 'react';
 import { PressEvents } from '@react-types/shared';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../lib/di';
 import { cn } from '@bem-react/classname';
 
 import {

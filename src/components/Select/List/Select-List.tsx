@@ -1,5 +1,5 @@
 import React, { createContext, FC, useContext } from 'react';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../../lib/di';
 
 import { ObjectsUnionToIntersection } from '../../../lib/compose';
 

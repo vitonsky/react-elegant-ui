@@ -9,7 +9,7 @@ import React, {
 	useState,
 } from 'react';
 import { cn } from '@bem-react/classname';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../lib/di';
 
 import {
 	IComponentHTMLElement,
@@ -144,12 +144,8 @@ export const Checkbox: FC<ICheckboxProps> = ({
 		[props, setIsFocused, setIsHovered],
 	);
 
-	const {
-		Box,
-		Control,
-		Tick,
-		Label,
-	} = useComponentRegistry<ICheckboxRegistry>(cnCheckbox());
+	const { Box, Control, Tick, Label } =
+		useComponentRegistry<ICheckboxRegistry>(cnCheckbox());
 
 	return (
 		<div

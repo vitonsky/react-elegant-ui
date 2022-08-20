@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../../lib/di';
 
 import { withHOCConstructor } from '../../../lib/compose';
 import { findIndexLoop } from '../../../lib/findIndexLoop';

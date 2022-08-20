@@ -1,6 +1,6 @@
 import React, { ElementType, FC } from 'react';
 import { cn } from '@bem-react/classname';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../lib/di';
 import { usePress } from '@react-aria/interactions';
 import { mergeProps } from '@react-aria/utils';
 import { PressEvents } from '@react-types/shared';

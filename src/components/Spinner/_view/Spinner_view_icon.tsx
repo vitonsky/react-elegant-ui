@@ -1,5 +1,5 @@
 import React from 'react';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../../lib/di';
 
 import { withHOCConstructor } from '../../../lib/compose';
 
@@ -18,15 +18,19 @@ export const withModSpinnerViewIcon = withHOCConstructor<
 	ISpinnerProps
 >(
 	{ matchProps: { view: 'icon' }, privateMatchProps: true },
-	(Component) => ({ view, className, ...props }) => {
-		const { Icon } = useComponentRegistry<ISpinnerIconRegistry>(
-			cnSpinner(),
-		);
+	(Component) =>
+		({ view, className, ...props }) => {
+			const { Icon } = useComponentRegistry<ISpinnerIconRegistry>(
+				cnSpinner(),
+			);
 
-		return (
-			<Component {...props} className={cnSpinner({ view }, [className])}>
-				<Icon className={cnSpinner('Icon')} />
-			</Component>
-		);
-	},
+			return (
+				<Component
+					{...props}
+					className={cnSpinner({ view }, [className])}
+				>
+					<Icon className={cnSpinner('Icon')} />
+				</Component>
+			);
+		},
 );

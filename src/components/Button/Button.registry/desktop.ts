@@ -1,4 +1,4 @@
-import { Registry } from '@bem-react/di';
+import { Registry } from '../../../lib/di';
 
 import { IButtonRegistry } from '.';
 import { cnButton } from '../Button';

@@ -1,5 +1,5 @@
 import { ComponentType } from 'react';
-import { Registry } from '@bem-react/di';
+import { Registry } from '../../../lib/di';
 
 import { withDefaultProps } from '../../../hocs/withDefaultProps';
 

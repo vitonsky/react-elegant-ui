@@ -1,5 +1,5 @@
 import React, { FC, HTMLAttributes } from 'react';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../../lib/di';
 
 import { cnTextinput } from '../Textinput';
 import { ITextinputClearRegistry } from '../Textinput.registry/features';

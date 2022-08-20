@@ -1,5 +1,5 @@
 import React, { createContext, FC, useContext } from 'react';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../../lib/di';
 
 import { IPopupProps } from '../../Popup/Popup';
 import { IModPopupTargetAnchor } from '../../Popup/_target/Popup_target_anchor';
