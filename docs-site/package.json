@@ -21,7 +21,7 @@
 		"next": "^12.2.5",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
-		"react-elegant-ui": "^0.1.34",
+		"react-elegant-ui": "^0.3.3",
 		"react-syntax-highlighter": "^15.4.3"
 	},
 	"devDependencies": {
