@@ -67,14 +67,6 @@ export function withRegistry() {
 			);
 		};
 
-		if (globalThis.__DEV__) {
-			const resolverValue = registries
-				.map((registry) => registry.id)
-				.join(', ');
-			// TODO: Use setDisplayName util.
-			RegistryResolver.displayName = `RegistryResolver(${resolverValue})`;
-		}
-
 		return RegistryResolver;
 	};
 }
@@ -87,14 +79,6 @@ export interface IRegistryConsumerProps {
 export const RegistryConsumer: FC<IRegistryConsumerProps> = (props) => (
 	<RegistriesConsumer>
 		{(registries) => {
-			if (globalThis.__DEV__) {
-				if (!registries[props.id]) {
-					throw new Error(
-						`Registry with id '${props.id}' not found.`,
-					);
-				}
-			}
-
 			return props.children(registries[props.id].snapshot());
 		}}
 	</RegistriesConsumer>
@@ -207,12 +191,6 @@ export class Registry {
 	 * @param id entry id
 	 */
 	get<T>(id: string): IRegistryEntity<T> {
-		if (globalThis.__DEV__) {
-			if (!this.entities[id]) {
-				throw new Error(`Entry with id '${id}' not found.`);
-			}
-		}
-
 		return this.entities[id];
 	}
 
