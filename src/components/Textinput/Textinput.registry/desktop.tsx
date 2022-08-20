@@ -1,5 +1,5 @@
 import React, { FC, HTMLAttributes } from 'react';
-import { Registry } from '@bem-react/di';
+import { Registry } from '../../../lib/di';
 
 import { ITextinputRegistry } from '.';
 import { ITextinputClearRegistry } from './features';

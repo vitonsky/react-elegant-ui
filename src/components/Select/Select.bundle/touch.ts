@@ -1,4 +1,4 @@
-import { withRegistry } from '@bem-react/di';
+import { withRegistry } from '../../../lib/di';
 
 import { Select as SelectTouch } from '../Select@touch';
 

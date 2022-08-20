@@ -6,7 +6,7 @@ Read introduction to understand terms and structure of package and components.
 
 Install package and peer deps
 
-`npm install react-elegant-ui @bem-react/classname @bem-react/di react`
+`npm install react-elegant-ui @bem-react/classname react`
 
 ## Basic usage
 
@@ -86,7 +86,7 @@ import {
 
 // Import tool from DI library
 // See docs: https://github.com/bem/bem-react/tree/master/packages/di
-import { withRegistry } from '@bem-react/di';
+import { withRegistry } from 'react-elegant-ui/esm/lib/di';
 
 // Import base component
 import { Button as DesktopButton } from 'react-elegant-ui/esm/components/Button/Button@desktop';
@@ -164,21 +164,23 @@ export interface IModButtonSizeL {
 	size?: 'l';
 }
 
-export const withModButtonSizeL = (
-	BaseComponent: ComponentType<IButtonProps>,
-	// You must remove feature properties to prevent forwarding
-): FC<IModButtonSizeL & IButtonProps> => ({ size, ...props }) => {
-	// do something if you need
-	// ...
+export const withModButtonSizeL =
+	(
+		BaseComponent: ComponentType<IButtonProps>,
+		// You must remove feature properties to prevent forwarding
+	): FC<IModButtonSizeL & IButtonProps> =>
+	({ size, ...props }) => {
+		// do something if you need
+		// ...
 
-	return (
-		<BaseComponent
-			{...props}
-			// add modifier to `className`
-			className={cnButton({ size }, [props.className])}
-		/>
-	);
-};
+		return (
+			<BaseComponent
+				{...props}
+				// add modifier to `className`
+				className={cnButton({ size }, [props.className])}
+			/>
+		);
+	};
 ```
 
 ### Smart HOC
@@ -228,17 +230,18 @@ export const withModButtonSizeL = withHOCConstructor<
 	},
 	// Types will infer automatically
 	// You still must remove feature properties to prevent forwarding
-	(BaseComponent) => ({ size, ...props }) => {
-		// do something if you need
-		// ...
+	(BaseComponent) =>
+		({ size, ...props }) => {
+			// do something if you need
+			// ...
 
-		return (
-			<BaseComponent
-				{...props}
-				className={cnButton({ size }, [props.className])}
-			/>
-		);
-	},
+			return (
+				<BaseComponent
+					{...props}
+					className={cnButton({ size }, [props.className])}
+				/>
+			);
+		},
 );
 ```
 

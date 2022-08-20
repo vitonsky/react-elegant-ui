@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Registry } from '@bem-react/di';
+import { Registry } from '../../../lib/di';
 
 import { IComponentHTMLElement } from '../../../types/IComponent';
 
@@ -34,7 +34,7 @@ export interface ITextareaDesktopRegistry<
 	} = {
 		ClearIcon: HTMLDivElement;
 		Clear: HTMLElement;
-	}
+	},
 > extends ITextareaRegistry,
 		ITextareaClearRegistry<T> {}
 

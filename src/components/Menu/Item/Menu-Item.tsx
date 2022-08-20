@@ -1,5 +1,5 @@
 import React, { FC, HTMLAttributes, Ref } from 'react';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../../lib/di';
 
 import { IComponentHTMLElement } from '../../../types/IComponent';
 import { useRefHost } from '../../../hooks/useRefHost';

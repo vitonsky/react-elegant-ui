@@ -1,9 +1,9 @@
-import { FC, ReactNode } from 'react';
+import { FC, HTMLAttributes, ReactNode } from 'react';
 import { cn } from '@bem-react/classname';
 
 import styles from './Layout.module.css';
 
-export interface LayoutProps {
+export interface LayoutProps extends HTMLAttributes<{}> {
 	nav?: ReactNode;
 	footer?: ReactNode;
 }

@@ -1,5 +1,5 @@
 import React, { createContext, FC, useCallback, useContext } from 'react';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../../lib/di';
 import { PressEvents } from '@react-types/shared';
 
 import { IComponentHTMLElement } from '../../../types/IComponent';

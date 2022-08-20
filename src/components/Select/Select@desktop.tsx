@@ -10,7 +10,7 @@ import React, {
 	useState,
 } from 'react';
 import { PressEvent } from '@react-types/shared';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../lib/di';
 
 import { makeChain } from '../../lib/makeChain';
 import { Keys, isKeyCode } from '../../lib/keyboard';

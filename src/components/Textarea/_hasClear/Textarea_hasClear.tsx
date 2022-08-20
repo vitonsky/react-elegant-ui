@@ -4,7 +4,7 @@ import React, {
 	useCallback,
 	MouseEventHandler,
 } from 'react';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../../lib/di';
 
 import { ITextareaClearRegistry } from '../Textarea.registry/features';
 import { cnTextarea, ITextareaProps } from '../Textarea';

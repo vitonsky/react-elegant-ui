@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../../lib/di';
 
 import { IComponentHTMLElement } from '../../../types/IComponent';
 

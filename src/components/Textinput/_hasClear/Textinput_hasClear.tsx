@@ -1,4 +1,4 @@
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../../lib/di';
 import React, {
 	ComponentType,
 	FC,

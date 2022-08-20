@@ -1,4 +1,4 @@
-import { withRegistry } from '@bem-react/di';
+import { withRegistry } from '../../../lib/di';
 
 import { TabsPanes as TabsPanesBase } from '../TabsPanes@desktop';
 import { TabsPanesDesktopRegistry } from '../TabsPanes.registry/desktop';

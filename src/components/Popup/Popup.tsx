@@ -9,7 +9,7 @@ import React, {
 	MouseEventHandler,
 } from 'react';
 import { createPortal } from 'react-dom';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../lib/di';
 import { cn } from '@bem-react/classname';
 
 import { IComponentHTMLElement } from '../../types/IComponent';

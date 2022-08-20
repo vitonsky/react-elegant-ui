@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { useComponentRegistry } from '@bem-react/di';
+import { useComponentRegistry } from '../../../lib/di';
 
 import { SimplyHOC } from '../../../lib/compose';
 
@@ -108,83 +108,87 @@ export interface IModMenuSearchable {
  * WARNING: if you use it with `withInlineSearch`, this modifier should wrap `withInlineSearch`
  * to prevent inline search while search here
  */
-export const withModMenuSearchable: SimplyHOC<
-	IModMenuSearchable,
-	IMenuProps
-> = (Menu) => ({
-	searchable,
-	searchPlaceholder,
-	searchPredicate,
-	searchRef,
-
-	items,
-	addonBefore,
-	...props
-}) => {
-	const [searchInput, setSearchInput] = useState('');
-
-	const isMatch = searchPredicate ?? defaultPredicate;
-
-	const renderItems = useMemo(
-		() =>
-			searchInput.length === 0
-				? items
-				: applySearchFilter(searchInput, isMatch, items),
-		[searchInput, isMatch, items],
-	);
-
-	const [isDisabledInlineSearch, setIsDisabledInlineSearch] = useState(false);
-
-	// Remove a force disable `inlineSearch` when `searchable` toggle off
-	useEffect(() => setIsDisabledInlineSearch(false), [searchable]);
-
-	const { SearchInput } = useComponentRegistry<IMenuSearchRegistry>(cnMenu());
-
-	// TODO: improve "aria" props to menu with search. Must be role like search input + menu with active item
-	// Memoize a input render
-	const addonBeforeContent = useMemo(
-		() =>
-			!searchable ? (
-				addonBefore
-			) : (
-				<>
-					{addonBefore}
-					<SearchInput
-						innerRef={searchRef}
-						placeholder={searchPlaceholder}
-						value={searchInput}
-						onChange={({ target }) => setSearchInput(target.value)}
-						onClear={() => setSearchInput('')}
-						onFocus={() => setIsDisabledInlineSearch(true)}
-						onBlur={() => setIsDisabledInlineSearch(false)}
-					/>
-				</>
-			),
-		[
-			SearchInput,
+export const withModMenuSearchable: SimplyHOC<IModMenuSearchable, IMenuProps> =
+	(Menu) =>
+		({
 			searchable,
-			addonBefore,
-			searchRef,
 			searchPlaceholder,
-			searchInput,
-		],
-	);
+			searchPredicate,
+			searchRef,
 
-	const specialProps: Record<string, any> = {};
+			items,
+			addonBefore,
+			...props
+		}) => {
+			const [searchInput, setSearchInput] = useState('');
 
-	// Disable inline search while focus on search input
-	const inlineSearchState = (props as IInlineSearchProps).inlineSearch;
-	if (inlineSearchState !== undefined) {
-		specialProps.inlineSearch =
-			inlineSearchState && !isDisabledInlineSearch;
-	}
+			const isMatch = searchPredicate ?? defaultPredicate;
 
-	return (
-		<Menu
-			{...(props as any)}
-			{...specialProps}
-			items={renderItems}
-			addonBefore={addonBeforeContent}
-		/>
-	);
-};
+			const renderItems = useMemo(
+				() =>
+					searchInput.length === 0
+						? items
+						: applySearchFilter(searchInput, isMatch, items),
+				[searchInput, isMatch, items],
+			);
+
+			const [isDisabledInlineSearch, setIsDisabledInlineSearch] =
+			useState(false);
+
+			// Remove a force disable `inlineSearch` when `searchable` toggle off
+			useEffect(() => setIsDisabledInlineSearch(false), [searchable]);
+
+			const { SearchInput } = useComponentRegistry<IMenuSearchRegistry>(
+				cnMenu(),
+			);
+
+			// TODO: improve "aria" props to menu with search. Must be role like search input + menu with active item
+			// Memoize a input render
+			const addonBeforeContent = useMemo(
+				() =>
+					!searchable ? (
+						addonBefore
+					) : (
+						<>
+							{addonBefore}
+							<SearchInput
+								innerRef={searchRef}
+								placeholder={searchPlaceholder}
+								value={searchInput}
+								onChange={({ target }) =>
+									setSearchInput(target.value)
+								}
+								onClear={() => setSearchInput('')}
+								onFocus={() => setIsDisabledInlineSearch(true)}
+								onBlur={() => setIsDisabledInlineSearch(false)}
+							/>
+						</>
+					),
+				[
+					SearchInput,
+					searchable,
+					addonBefore,
+					searchRef,
+					searchPlaceholder,
+					searchInput,
+				],
+			);
+
+			const specialProps: Record<string, any> = {};
+
+			// Disable inline search while focus on search input
+			const inlineSearchState = (props as IInlineSearchProps).inlineSearch;
+			if (inlineSearchState !== undefined) {
+				specialProps.inlineSearch =
+				inlineSearchState && !isDisabledInlineSearch;
+			}
+
+			return (
+				<Menu
+					{...(props as any)}
+					{...specialProps}
+					items={renderItems}
+					addonBefore={addonBeforeContent}
+				/>
+			);
+		};
