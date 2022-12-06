@@ -62,7 +62,7 @@
 		"husky": "^7.0.1",
 		"lint-staged": "^11.0.0",
 		"merge-stream": "^2.0.0",
-		"plugin-error": "^1.0.1",
+		"plugin-error": "^2.0.1",
 		"prettier": "^2.2.1",
 		"prop-types": "^15.7.2",
 		"react": "^17.0.2",
