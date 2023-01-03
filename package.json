@@ -59,7 +59,7 @@
 		"gulp-clean-package": "^0.0.1",
 		"gulp-cli": "^2.3.0",
 		"gulp-typescript": "^6.0.0-alpha.1",
-		"husky": "^7.0.1",
+		"husky": "^8.0.3",
 		"lint-staged": "^11.0.0",
 		"merge-stream": "^2.0.0",
 		"plugin-error": "^1.0.1",
