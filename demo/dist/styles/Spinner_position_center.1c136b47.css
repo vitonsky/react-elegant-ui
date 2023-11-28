@@ -1,9 +1,0 @@
-.Spinner_position_center {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-
-	/* half size */
-	margin-top: calc(var(--spinner-size-m) / 2 * -1);
-	margin-left: calc(var(--spinner-size-m) / 2 * -1);
-}

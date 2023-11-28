@@ -1,8 +1,0 @@
-.Button-Text {
-	position: relative;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	text-align: start;
-	width: 100%;
-}

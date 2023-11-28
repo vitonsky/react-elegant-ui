@@ -1,9 +1,0 @@
-.Menu-Group_hidden {
-	display: none;
-}
-
-.Menu-GroupTitle {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}

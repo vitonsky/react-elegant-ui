@@ -1,9 +1,0 @@
-.TabsMenu-Tab {
-	cursor: pointer;
-	user-select: none;
-	-webkit-tap-highlight-color: transparent;
-}
-
-.TabsMenu-Tab_disabled {
-	cursor: default;
-}

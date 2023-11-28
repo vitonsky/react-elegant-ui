@@ -1,6 +1,0 @@
-.TabsMenu_focusVisible.TabsMenu_view_motion .TabsMenu-Tab:focus {
-	outline:
-		var(--tabsmenu-outline-width) solid
-		var(--tabsmenu-view-default-outline-color);
-	outline-offset: calc(-1 * var(--tabsmenu-outline-width));
-}

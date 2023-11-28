@@ -1,8 +1,0 @@
-.Textarea-Clear {
-	position: absolute;
-	display: block;
-}
-
-.Textarea-Clear:not(.Textarea-Clear_visible) {
-	display: none;
-}

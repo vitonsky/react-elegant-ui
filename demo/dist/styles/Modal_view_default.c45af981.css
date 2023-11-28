@@ -1,9 +1,0 @@
-.Modal_view_default .Modal-Content {
-	padding: var(--modal-size-m-content-indent);
-	background-color: var(--modal-view-default-fill-color);
-	border-radius: var(--modal-view-default-border-radius);
-}
-
-.Modal_view_default .Modal-Overlay {
-	background-color: var(--modal-view-default-overlay-fill-color);
-}
