@@ -1,3 +1,7 @@
+---
+slug: /
+---
+
 # About
 
 Main aim of this project - make useful library for simplify development of high quality UI on web technologies.
