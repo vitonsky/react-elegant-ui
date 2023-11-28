@@ -33,10 +33,10 @@ export const TextinputControl: FC<ITextinputControl> = ({
 
 	return (
 		<input
+			type="text"
 			{...ctx}
 			{...props}
 			ref={innerRefMix}
-			type="text"
 			className={cnTextinput('Control', [className])}
 			spellCheck={spellCheck}
 		/>
