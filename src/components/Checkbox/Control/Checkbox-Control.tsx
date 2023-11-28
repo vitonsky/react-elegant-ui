@@ -6,7 +6,7 @@ import { cnCheckbox } from '../Checkbox';
 
 import './Checkbox-Control.css';
 
-export interface ICheckboxControl<T = HTMLInputElement>
+export interface ICheckboxControl<T extends HTMLElement = HTMLInputElement>
 	extends IComponentElement<T>,
 		InputHTMLAttributes<T> {}
 

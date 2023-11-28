@@ -26,7 +26,7 @@ export function withRegistry() {
 	// Use arguments instead of rest-arguments to get faster and more compact code.
 	const registries: Registry[] = [].slice.call(arguments);
 
-	return function WithRegistry<P>(Component: ComponentType<P>) {
+	return function WithRegistry<P extends {}>(Component: ComponentType<P>) {
 		const RegistryResolver: FC<P> = (props) => {
 			const providedRegistriesRef = useRef<RegistryContext | null>(null);
 

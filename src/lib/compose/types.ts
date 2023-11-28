@@ -80,7 +80,7 @@ export type CompositeUnitSimple<T> = HOC<T>;
 /**
  * Object for composer
  */
-export type CompositeUnit<T> = ConfigurableHOC<T> | HOC<T>;
+export type CompositeUnit<T extends {}> = ConfigurableHOC<T> | HOC<T>;
 
 /**
  * Helper to extract props from `ComponentType`

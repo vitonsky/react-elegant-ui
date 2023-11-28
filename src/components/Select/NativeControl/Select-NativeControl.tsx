@@ -5,7 +5,7 @@ import { IComponentElement } from '../../../types/IComponent';
 import { cnSelect } from '../Select';
 import './Select-NativeControl.css';
 
-export interface ISelectNativeControl<T = HTMLSelectElement>
+export interface ISelectNativeControl<T extends HTMLElement = HTMLSelectElement>
 	extends IComponentElement<T>,
 		SelectHTMLAttributes<T> {}
 

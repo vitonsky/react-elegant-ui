@@ -156,7 +156,7 @@ export interface KeyboardNavigationParameters<
  *
  * It useful when u want navigate in items by keyboard arrows
  */
-export const useKeyboardNavigation = <T>({
+export const useKeyboardNavigation = <T extends {}>({
 	enabled,
 	items,
 	cursor,
