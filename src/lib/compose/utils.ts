@@ -27,7 +27,7 @@ export const isHOCObject = <T extends {} = any>(
 /**
  * Get array of props from `HOCOptions`
  */
-export const getPropsFromHOCOptions = <T>(
+export const getPropsFromHOCOptions = <T extends {}>(
 	options: HOCOptions<T>,
 	onlyPrivate = false,
 ) => {

@@ -19,13 +19,10 @@ export const deepMerge = <X extends {} | [], Y extends {} | []>(
 
 		for (const key in B) {
 			if (
-				typeof ((A as unknown) as Y)[key] === 'object' &&
+				typeof (A as unknown as Y)[key] === 'object' &&
 				typeof B[key] === 'object'
 			) {
-				mergedObject[key] = deepMerge(
-					((A as unknown) as Y)[key],
-					B[key],
-				);
+				mergedObject[key] = deepMerge((A as any)[key], (B as any)[key]);
 			} else {
 				mergedObject[key] = B[key];
 			}

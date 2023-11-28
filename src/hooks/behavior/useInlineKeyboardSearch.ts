@@ -101,7 +101,7 @@ export interface KeyboardInlineSearchParameters<
  *
  * It useful when u want fast navigate in items by input it names
  */
-export const useInlineKeyboardSearch = <T>({
+export const useInlineKeyboardSearch = <T extends {}>({
 	enabled,
 	items,
 	cursor,
