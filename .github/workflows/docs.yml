@@ -28,23 +28,20 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Install root deps
-        run: npm install
-
       - name: Install docs-site deps
         working-directory: './docs-site'
         run: npm install
 
-      - name: Build
+      - name: Build docs site
         working-directory: './docs-site'
         run: npm run build
 
-      - name: Build examples
-        run: |
-          cd examples/components-list
-          npm i
-          npm run build
-          outDir=../../docs-site/out/demo && mkdir -p "$outDir" && cp -r ./{dist,index.html} "$outDir"
+      # - name: Build examples
+      #   run: |
+      #     cd examples/components-list
+      #     npm i
+      #     npm run build
+      #     outDir=../../docs-site/out/demo && mkdir -p "$outDir" && cp -r ./{dist,index.html} "$outDir"
 
       - name: Deploy to GitHub Pages
         uses: Cecilapp/GitHub-Pages-deploy@v3
@@ -52,5 +49,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           email: noreply@example.com
-          build_dir: './docs-site/out'
+          build_dir: './docs-site/build'
           branch: gh-pages
