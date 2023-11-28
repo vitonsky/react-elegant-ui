@@ -55,65 +55,40 @@ const config: Config = {
 		// Replace with your project's social card
 		// image: 'img/docusaurus-social-card.jpg',
 		navbar: {
-			title: 'Elegant UI',
+			title: PROJECT_NAME,
 			items: [
+				// TODO: implement playground
+				// {
+				// 	href: '/',
+				// 	label: 'Playground',
+				// 	position: 'left',
+				// },
 				{
-					href: '/facebook/docusaurus',
-					label: 'Playground',
-					position: 'left',
+					href: 'https://www.npmjs.com/package/react-elegant-ui',
+					label: 'NPM',
+					position: 'right',
 				},
 				{
-					href: 'https://github.com/facebook/docusaurus',
+					href: 'https://github.com/vitonsky/react-elegant-ui',
 					label: 'GitHub',
 					position: 'right',
 				},
 			],
 		},
-		footer: {
-			style: 'dark',
-			links: [
-				{
-					title: 'Docs',
-					items: [
-						{
-							label: 'Tutorial',
-							to: '/docs/intro',
-						},
-					],
-				},
-				{
-					title: 'Community',
-					items: [
-						{
-							label: 'Stack Overflow',
-							href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-						},
-						{
-							label: 'Discord',
-							href: 'https://discordapp.com/invite/docusaurus',
-						},
-						{
-							label: 'Twitter',
-							href: 'https://twitter.com/docusaurus',
-						},
-					],
-				},
-				{
-					title: 'More',
-					items: [
-						{
-							label: 'Blog',
-							to: '/blog',
-						},
-						{
-							label: 'GitHub',
-							href: 'https://github.com/facebook/docusaurus',
-						},
-					],
-				},
-			],
-			copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-		},
+		// footer: {
+		// 	style: 'light',
+		// 	// links: [
+		// 	// 	{
+		// 	// 		title: 'Docs',
+		// 	// 		items: [
+		// 	// 			{
+		// 	// 				label: 'Tutorial',
+		// 	// 				to: '/docs/intro',
+		// 	// 			},
+		// 	// 		],
+		// 	// 	},
+		// 	// ],
+		// },
 		prism: {
 			theme: prismThemes.github,
 			darkTheme: prismThemes.dracula,
