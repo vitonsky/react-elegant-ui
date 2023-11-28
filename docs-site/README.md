@@ -1,24 +1,41 @@
-Directory contains sources of docs site for project.
+# Website
 
-Site use latest version of library and show example of use UI kit.
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-It also need to make abstraction from git hosting.
+### Installation
 
-This site may use some hacks and bad examples of code, then it is not good example of use library and you should not reference to it in your issues.
+```
+$ yarn
+```
 
-## Roadmap
+### Local Development
 
-- [x] Deploy in pages
-- [ ] Fix anchors. At this time its may repeat ids. Must use hierarchy like `header-subHeader-subHeader2` or short hash of it as prefix
-- [ ] Add pages with API for each component
-- [ ] Add examples (maybe with knobs)
-- [ ] Configure github actions to deploy site
+```
+$ yarn start
+```
 
-### Low priority
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-- [ ] Improve accessibility
-- [ ] Improve layout for smartphones
-- [ ] Keep pages as serialized AST instead raw text to improve performance for big pages
-- [ ] Use more performance search engine which can highlight search results better
-- [ ] Use design tokens instead values in CSS
-- [ ] Replace library for highlight code to more beauty. Good if it can split code to lines with numbers
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

@@ -1,42 +1,44 @@
 {
-	"name": "docs-site",
-	"version": "1.0.0",
-	"description": "Docs site for UI kit",
+	"name": "my-website",
+	"version": "0.0.0",
+	"private": true,
 	"scripts": {
-		"dev": "NODE_OPTIONS='--inspect' next dev",
-		"build:searchIndex": "ts-node ./scripts/buildSearchIndex.ts",
-		"build": "NODE_ENV=production npm run build:all",
-		"build:dev": "NODE_ENV=dev npm run build:all",
-		"build:all": "npm run clear && npm run build:searchIndex && next build && next export",
-		"deploy": "npm run build && echo '_next' > out/.nojekyll && npx gh-pages -t true -d out",
-		"clear": "rm -rf .next out public/static"
+		"docusaurus": "docusaurus",
+		"start": "docusaurus start",
+		"build": "docusaurus build",
+		"swizzle": "docusaurus swizzle",
+		"deploy": "docusaurus deploy",
+		"clear": "docusaurus clear",
+		"serve": "docusaurus serve",
+		"write-translations": "docusaurus write-translations",
+		"write-heading-ids": "docusaurus write-heading-ids",
+		"typecheck": "tsc"
 	},
 	"dependencies": {
-		"@bem-react/classname": "^1.5.9",
-		"@popperjs/core": "^2.9.2",
-		"@react-aria/interactions": "^3.3.4",
-		"@react-aria/utils": "^3.7.0",
-		"@types/resize-observer-browser": "^0.1.5",
-		"lunr": "^2.3.9",
-		"next": "^12.2.5",
-		"react": "^17.0.2",
-		"react-dom": "^17.0.2",
-		"react-elegant-ui": "^0.3.3",
-		"react-syntax-highlighter": "^15.4.3"
+		"@docusaurus/core": "3.0.0",
+		"@docusaurus/preset-classic": "3.0.0",
+		"@mdx-js/react": "^3.0.0",
+		"clsx": "^1.2.1",
+		"docusaurus-lunr-search": "^3.3.0",
+		"prism-react-renderer": "^2.1.0",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0"
 	},
 	"devDependencies": {
-		"@types/lunr": "^2.3.3",
-		"@types/react": "^18.0.17",
-		"@types/react-syntax-highlighter": "^13.5.0",
-		"@types/unist": "^2.0.3",
-		"gh-pages": "^3.2.2",
-		"glob-promise": "^4.1.0",
-		"gray-matter": "^4.0.3",
-		"markdown-to-jsx": "^7.1.2",
-		"mdast-util-to-markdown": "^0.6.5",
-		"next-global-css": "^1.3.1",
-		"remark": "^13.0.0",
-		"ts-node": "^10.1.0",
-		"unist-util-visit": "^3.1.0"
+		"@docusaurus/module-type-aliases": "3.0.0",
+		"@docusaurus/tsconfig": "3.0.0",
+		"@docusaurus/types": "3.0.0",
+		"typescript": "~5.2.2"
+	},
+	"browserslist": {
+		"production": [">0.5%", "not dead", "not op_mini all"],
+		"development": [
+			"last 3 chrome version",
+			"last 3 firefox version",
+			"last 5 safari version"
+		]
+	},
+	"engines": {
+		"node": ">=18.0"
 	}
 }
