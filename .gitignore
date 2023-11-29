@@ -3,7 +3,6 @@ dist
 
 # dev files
 .npmrc
-package-lock.json
 
 # editors
 .idea
