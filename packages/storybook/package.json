@@ -3,11 +3,27 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"devDependencies": {},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build"
+	},
+	"devDependencies": {
+		"@storybook/addon-essentials": "^7.6.1",
+		"@storybook/addon-interactions": "^7.6.1",
+		"@storybook/addon-links": "^7.6.1",
+		"@storybook/addon-onboarding": "^1.0.8",
+		"@storybook/blocks": "^7.6.1",
+		"@storybook/react": "^7.6.1",
+		"@storybook/react-webpack5": "^7.6.1",
+		"@storybook/test": "^7.6.1",
+		"@svgr/webpack": "^8.1.0",
+		"eslint-plugin-storybook": "^0.6.15",
+		"file-loader": "^6.2.0",
+		"storybook": "^7.6.1"
+	},
+	"eslintConfig": {
+		"extends": ["plugin:storybook/recommended"]
 	},
 	"author": "",
 	"license": "ISC"
