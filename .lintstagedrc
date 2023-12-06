@@ -2,7 +2,7 @@
 	"*.{js,ts,tsx}": [
 		"prettier --write",
 		"eslint --fix",
-		"stylelint --fix"
+		"stylelint --fix --allow-empty-input"
 	],
 	"*.md": [
 		"prettier --write --parser markdown",

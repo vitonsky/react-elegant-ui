@@ -2,6 +2,7 @@
 	"name": "docs-site",
 	"version": "0.0.0",
 	"private": true,
+	"packageManager": "yarn@4.0.2",
 	"scripts": {
 		"docusaurus": "docusaurus",
 		"start": "docusaurus start",
@@ -28,6 +29,8 @@
 		"@docusaurus/module-type-aliases": "3.0.0",
 		"@docusaurus/tsconfig": "3.0.0",
 		"@docusaurus/types": "3.0.0",
+		"@types/lunr": "^2",
+		"lunr": "^2.3.9",
 		"typescript": "~5.2.2"
 	},
 	"browserslist": {

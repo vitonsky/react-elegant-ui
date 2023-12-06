@@ -56,12 +56,22 @@ function transformSVGInESM() {
 						'inline-react-svg',
 						{
 							svgo: {
-								plugins: extendDefaultPlugins([
+								plugins: [
 									{
-										name: 'removeViewBox',
-										active: false,
+										name: 'preset-default',
+										params: {
+											overrides: {
+												// disable a default plugin
+												removeViewBox: false,
+
+												// customize the params of a default plugin
+												inlineStyles: {
+													onlyMatchedOnce: false,
+												},
+											},
+										},
 									},
-								]),
+								],
 							},
 						},
 					],
