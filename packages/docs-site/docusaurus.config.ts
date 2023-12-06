@@ -36,7 +36,7 @@ const config: Config = {
 			'classic',
 			{
 				docs: {
-					path: '../../docs',
+					path: './docs',
 					include: ['**/*.md'],
 					exclude: ['README.md'],
 					routeBasePath: '/', // Serve the docs at the site's root

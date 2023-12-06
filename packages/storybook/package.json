@@ -1,8 +1,9 @@
 {
 	"name": "storybook",
 	"version": "1.0.0",
+	"private": true,
+	"packageManager": "yarn@4.0.2",
 	"description": "",
-	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"storybook": "storybook dev -p 6006",
@@ -15,7 +16,7 @@
 		"@storybook/addon-onboarding": "^1.0.8",
 		"@storybook/blocks": "^7.6.1",
 		"@storybook/react": "^7.6.1",
-		"@storybook/react-webpack5": "^7.6.1",
+		"@storybook/react-webpack5": "^7.6.3",
 		"@storybook/test": "^7.6.1",
 		"@svgr/webpack": "^8.1.0",
 		"eslint-plugin-storybook": "^0.6.15",

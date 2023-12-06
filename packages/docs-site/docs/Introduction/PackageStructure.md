@@ -25,7 +25,7 @@ For more info see [component anatomy](./ComponentArchitecture.md) and [component
 
 <!-- TODO: make docs for exists hooks with explain API -->
 
-Directory `hooks` contains a [react hooks](https://ru.reactjs.org/docs/hooks-reference.html) useful for development UI components.
+Directory `hooks` contains a [react hooks](https://ru.legacy.reactjs.org/docs/hooks-reference.html) useful for development UI components.
 
 Subdirectory `behavior` contains a react hooks which implement typical behavior of UI components.
 

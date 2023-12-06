@@ -1,8 +1,12 @@
-node_modules
 dist
 
 # dev files
 .npmrc
+
+node_modules
+.cache
+.pnp.cjs
+.pnp.loader.mjs
 
 # editors
 .idea
